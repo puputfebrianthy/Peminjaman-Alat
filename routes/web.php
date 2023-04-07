@@ -8,7 +8,7 @@ use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\MLDController;
 use App\Http\Controllers\monitoringController;
 use App\Http\Controllers\HistoryController;
-// use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,45 +21,51 @@ use App\Http\Controllers\HistoryController;
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
-});
-
-
-Route::get('/ketersediaanAlat', [KetersediaanAlatController::class, 'index']);
-
-Route::get('/validasi', [ValidasiController::class, 'index']);
-
-Route::get('/laporanPeminjaman', [PeminjamanAlatController::class, 'index']);
-Route::post('/createpinjam', [PeminjamanAlatController::class, 'store']);
-
-Route::get('/pengembalian', [PengembalianController::class, 'index']);
-
-// Route::get('/monitoring', [MLDController::class, 'index']);
-
-Route::get('/history',[HistoryController::class, 'index']);
-
-Route::get('/mld', [MLDController::class, 'index']);
-
-Route::get('/form', function () {
-    return view('formPinjam');
-});
-
+Route::post('/logindashboard', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-
-//==MONITORING==
-Route::get('/monitoring', function () {
-    return view('monitoring');
-});
-Route::post('/createmonitoring', [monitoringController::class, 'store']);
-
+Route::get('/ketersediaanAlat', [KetersediaanAlatController::class, 'index']);
 Route::get('/peminjaman', function () {
-    return view('formPinjam');
+return view('formPinjam');
+});
+Route::get('/laporanPeminjaman', [PeminjamanAlatController::class, 'index']);
+Route::post('/createpinjam', [PeminjamanAlatController::class, 'store']);
+
+
+// Middleware untuk tamu yang belum login
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::get('/', function () {
+        return view('beranda');
+    });
 });
 
-Route::get('/beranda', function () {
-    return view('beranda');
-});
 
+// Middleware untuk akun yang sudah login dan userlevel
+Route::group(['middleware' => ['auth', 'cekUserLogin:superadmin,admin']], function () {
+    Route::post('/registration', [LoginController::class, 'registration']);
+    Route::get('/register', [LoginController::class, 'register']);
+    Route::post('/logout', [LoginController::class, 'logout']);
+
+    Route::get('/validasi', [ValidasiController::class, 'index']);
+
+    Route::get('/pengembalian', [PengembalianController::class, 'index']);
+
+    // Route::get('/monitoring', [MLDController::class, 'index']);
+
+    Route::get('/history',[HistoryController::class, 'index']);
+
+    Route::get('/mld', [MLDController::class, 'index']);
+
+    Route::get('/form', function () {
+        return view('formPinjam');
+    });
+
+    //==MONITORING==
+    Route::get('/monitoring', function () {
+        return view('monitoring');
+    });
+    Route::post('/createmonitoring', [monitoringController::class, 'store']);
+
+});

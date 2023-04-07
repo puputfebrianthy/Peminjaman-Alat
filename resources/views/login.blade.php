@@ -8,7 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <title>Sign in & Sign up Form</title>
+    <title>Sign in & Sign up</title>
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
@@ -420,69 +420,35 @@ form.sign-in-form {
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="" class="sign-in-form"
-          method="POST">
-            <h2 class="title">Login</h2>
+          <form action="/logindashboard" class="sign-in-form" method="POST">
             @csrf
+            @if (session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show">{{session('loginError')}}</div>
+            @endif
+            <h2 class="title">Login</h2>
             {{-- email --}}
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input autofocus type="text" class="form-control
-                    @error('username')
-                    is-invalid
-                    @enderror
-                    " placeholder="Username" name="username" />
+                    <input autofocus type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username" value="{{ old('username') }}"/>
                 </div>
 
                 @error('username')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
+                <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
 
             {{-- password --}}
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" class="form-control
-                    @error('password')
-                    is-invalid
-                    @enderror
-                    " placeholder="Password" name="password" />
+                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" value="{{ old('password') }}"/>
                 </div>
 
                 @error('password')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
+                <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            {{-- iconts --}}
+
                 <input type="submit" value="Login" class="btn solid" />
           </form>
-          <!--END-->
-
-
-          <!--REGISTRASI-->
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Registrasi</h2>
-
-            {{-- username --}}
-                <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" />
-                </div>
-            {{-- email --}}
-                <div class="input-field">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" />
-                </div>
-            {{-- password --}}
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" />
-                </div>
-            {{-- iconts --}}
-                <input type="submit" class="btn" value="REGISTRASI" />
-            </form>
+          <!--END-->       
         </div>
       </div>
       <!--END-->
@@ -495,9 +461,7 @@ form.sign-in-form {
                     Selamat datang di website sistem informasi. Jika belum memiliki akun,
                     Silahkan melakukan pendaftaran!!
                 </p>
-                    <button class="btn transparent" id="sign-up-btn">
-                    Registrasi
-                    </button>
+
           </div>
           <img src="img/log.svg" class="image" alt="" />
         </div>

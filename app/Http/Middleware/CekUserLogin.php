@@ -14,21 +14,30 @@ class CekUserLogin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $rules)
+
+    public function handle(Request $request, Closure $next, ...$userLevel)
     {
-
-        if(!Auth::check()){
-            return redirect('login');
-        }
-
-        $user = Auth::user();
-        if($user->level == $rules);
+        if (in_array($request->user()->level, $userLevel)) {
             return $next($request);
-
-            return redirect('login')->with('error', "Kamu tidak ada akses");
-
-
-
-        return $next($request);
+        }
+        return redirect('/dashboard');
     }
+
+    // public function handle(Request $request, Closure $next, $rules)
+    // {
+
+    //     if(!Auth::check()){
+    //         return redirect('login');
+    //     }
+
+    //     $user = Auth::user();
+    //     if($user->level == $rules);
+    //         return $next($request);
+
+    //         return redirect('login')->with('error', "Kamu tidak ada akses");
+
+
+
+    //     return $next($request);
+    // }
 }

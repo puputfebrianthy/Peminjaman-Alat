@@ -58,19 +58,9 @@
         </div>
 
         @include('components.sidebar')
-
+        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
             <!-- Header / Profile -->
-            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-
-                <div class="bg-white p-4 w-full flex-row flex">
-                    <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer mr-auto" id="btnToggle2">
-
-                    <div class="items-center gap-x-2 justify-end hidden sm:flex">
-                        <img class="w-7" src="img/icons/default_profile.svg" alt="Profile Image">
-                        <p class="text-black font-semibold">PUPUT FEBRIANTI</p>
-                    </div>
-                </div>
-
+            @include('components.header')
             <!-- Breadcrumb -->
             <div class=" lg:p-2 lg:py-4 mx-8 mt-2">
                 <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
@@ -163,6 +153,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
 <!--JS Sidebar-->
 <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
