@@ -420,21 +420,20 @@ form.sign-in-form {
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="" class="sign-in-form"
-          method="POST">
+          <form action="/logindashboard" class="sign-in-form" method="post">
             <h2 class="title">Login</h2>
             @csrf
             {{-- email --}}
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input autofocus type="text" class="form-control
-                    @error('username')
+                    @error('email')
                     is-invalid
                     @enderror
-                    " placeholder="Username" name="username" />
+                    " placeholder="email" name="email" />
                 </div>
 
-                @error('username')
+                @error('email')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
@@ -468,7 +467,7 @@ form.sign-in-form {
             {{-- username --}}
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" />
+                    <input type="text" placeholder="username" />
                 </div>
             {{-- email --}}
                 <div class="input-field">
@@ -490,7 +489,7 @@ form.sign-in-form {
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>SIMPBM</h3>
+            <h3>SIMPAMD</h3>
                 <p>
                     Selamat datang di website sistem informasi. Jika belum memiliki akun,
                     Silahkan melakukan pendaftaran!!
@@ -504,7 +503,7 @@ form.sign-in-form {
 
         <div class="panel right-panel">
           <div class="content">
-            <h3>SIMPBM</h3>
+            <h3>SIMPAMD</h3>
                 <p>
                 Hai!! Selamat melakukan pendaftaran dengan menuliskan nama, email dan password!
                 </p>

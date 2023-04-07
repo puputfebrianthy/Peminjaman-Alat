@@ -175,10 +175,11 @@
                                 <div class="bg-gradient-to-t to-yellow-300 from-yellow-100 hover:border-2 red:300 hover:border-transparent  max-w-sm  rounded-lg  shadow-md  ">
                                     <div class="p-5 bg-[#F7F2F0] h-56">
                                         <a href="#">
-                                            <h5 class="mb-2 text-lg font-bold tracking-tight text-black dark:text-black font-inter">Informasi</h5>
+                                            <h5 class="mb-2 text-lg font-bold tracking-tight text-black dark:text-black font-inter">Informasi Peminjaman Alat Tulis</h5>
                                         </a>
                                         <p class="mb-3 mt-3 font-normal text-gray-700 dark:text-[659093] text-xs text-center">
-                                            Informasi ketersediaan alat atau fasilitas laboratorium bagi cevitas akademika Universitas Cokroaminoto Palopo
+                                            Informasi peminjaman alat tulis yaitu buku, spidol, penghapus di ruangan prodi informatika fakultas teknik komputer
+                                            Universitas Cokroaminoto Palopo
                                         </p>
                                         <button class="m-8 mdx:visible md:hidden smx:text-xs smx:h-8 text-[10] mx-auto text-white bg-yellow-400 hover:bg-yellow-400 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 text-center dark:bg-[#DDB07F] dark:hover:bg-yellow-400"
                                             type="button" data-modal-toggle="K5"> read more
@@ -196,7 +197,7 @@
                                                     <!-- Modal header -->
                                                     <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600 bg-yellow-400 hover:bg-yellow-400">
                                                         <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-[#659093]"></h3>
-                                                        <p>Informasi Alat</p>
+                                                        <p class="font-semibold">INFORMASI PEMINJAMAN ALAT TULIS</p>
                                                         <button type="button" class="text-[659093] bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="K5">
                                                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                                 <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -204,10 +205,20 @@
                                                             </svg>
                                                         </button>
                                                     </div>
+                                                    <br>
                                                     <!-- Modal body -->
-                                                    <div class="p-6 space-y-6 bg-scroll bg-contain overflow-auto  h-96 min-w-full ">
-                                                        <div class="text-justify text-base leading-relaxed text-gray-500 dark:text-[659093]">
-                                                            <h1 class="text-left text-black">Deskripsi : </h1>
+                                                    <div class=" flex justify-center text-center">
+                                                        <h1 class="text-left text-black">FLOWCHART PEMINJAMAN ALAT TULIS </h1>
+                                                    </div>
+
+                                                    <div class="grid grid-cols-2 gap-2 pl-12 py-8 sm-flex-20 ">
+                                                        <p class="text-justify font-normal"> Keterangannya: start, melakukan laporan peminjaman pada staff prodi,
+                                                            mengisi nama, nim, dan kelas yang melakukan peminjaman, jika staff prodi menyetujui maka mahasiswa akan mengambil alat tulis
+                                                            yang di pinjam, jika tidak mahasiswa wajib melaporkan kembali, selesai.
+
+                                                        </p>
+                                                        <div>
+                                                            <img class="h-64 max-w-xl w-[270px] rounded-5xl" src="img/p.jpg" alt="Peminjaman alat tulis">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -247,7 +258,7 @@
                                                     <div
                                                         class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600 bg-yellow-400 hover:bg-yellow-400">
                                                         <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-[#659093]"> </h3>
-                                                        <p class="font-semibold">ALUR PEMINJAMAN ALAT </p>
+                                                        <p class="font-semibold">INFORMASI PEMINJAMAN ALAT </p>
                                                         <button type="button"
                                                             class="text-[659093] bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                                             data-modal-toggle="SMK">
@@ -261,18 +272,18 @@
                                                     </div>
                                                     <br>
                                                     <!-- Modal body -->
-                                                    <div class=" flex justify-center font-semibold text-center">
+                                                    <div class=" flex justify-center text-center">
                                                         <h1 class="text-left text-black">FLOWCHART PEMINJAMAN ALAT </h1>
                                                     </div>
 
-                                                    <div class="grid grid-cols-2 gap-2 pl-16 py-10 sm-flex-20 ">
-                                                        <p class="text-justify font-normal">Sebelum melakukan peminjaman alat pertama masuk ke halaman dashboard mahasiswa,
+                                                    <div class="grid grid-cols-2 gap-2 pl-14 py-8 sm-flex-20 ">
+                                                        <p class="text-justify font-normal"> keterangannya: Masuk kehalaman menu dashboard mahasiswa,
                                                             kemudian mengecek alat yang tersedia, lalu Mengisi form peminjaman dan
                                                             Submit. setelah selesai, masuk kehalaman laporan peminjaman alat untuk mengecek status peminjaman yang telah di ajukan
 
                                                         </p>
                                                         <div>
-                                                            <img class="h-80 max-w-xl w-[210px] rounded-5xl" src="img/f.png" alt="Peminjaman alat">
+                                                            <img class="h-60 max-w-xl w-[270px] rounded-5xl" src="img/peminjaman.jpg" alt="Peminjaman alat">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -325,7 +336,7 @@
                                                             class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-[#659093] ">
 
                                                         </h3>
-                                                        <p>Informasi Peminjaman Ruangan</p>
+                                                        <p class="font-semibold">INFORMASI PEMINJAMAN RUANGAN</p>
                                                         <button type="button"
                                                             class="text-[659093] bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                                             data-modal-toggle="UG">
@@ -337,10 +348,20 @@
                                                             </svg>
                                                         </button>
                                                     </div>
+                                                    <br>
                                                     <!-- Modal body -->
-                                                    <div
-                                                        class="p-6 space-y-6 bg-scroll bg-contain overflow-auto  h-96 min-w-full">
-                                                        <h1 class="text-left text-black -mb-4">Deskripsi : </h1>
+                                                    <div class=" flex justify-center text-center">
+                                                        <h1 class="text-left text-black">FLOWCHART PEMINJAMAN RUANGAN </h1>
+                                                    </div>
+
+                                                    <div class="grid grid-cols-2 gap-2 pl-14 py-8 sm-flex-20 ">
+                                                        <p class="text-justify font-normal"> keterangannya:  Ruangan prodi, melaporkan ke staff prodi bahwa ingin
+                                                            meminjaman ruangan kelas untuk melaksanakan kelas sore maupun kegiatan belajar sore, staff prodi menyetujui peminjaman ruangan
+                                                            tersebut dan mahasiswa berhak menggunakannya.
+                                                        </p>
+                                                        <div>
+                                                            <img class="h-56 max-w-xl w-[270px] rounded-5xl" src="img/ruangan.jpg" alt="Peminjaman alat">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

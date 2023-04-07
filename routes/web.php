@@ -8,7 +8,7 @@ use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\MLDController;
 use App\Http\Controllers\monitoringController;
 use App\Http\Controllers\HistoryController;
-// use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,7 @@ use App\Http\Controllers\HistoryController;
 Route::get('/login', function () {
     return view('login');
 });
+Route::post('/logindashboard', [LoginController::class, 'proses']);
 
 
 Route::get('/ketersediaanAlat', [KetersediaanAlatController::class, 'index']);
@@ -59,7 +60,7 @@ Route::get('/peminjaman', function () {
     return view('formPinjam');
 });
 
-Route::get('/beranda', function () {
+Route::get('/', function () {
     return view('beranda');
 });
 

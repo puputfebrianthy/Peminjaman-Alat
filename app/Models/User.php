@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Sanctum\HasApiTokens;
 
-class User extends Model
+
+class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -19,6 +20,7 @@ class User extends Model
      * @var array<int, string>
     */
 
+    protected $table = 'users';
     protected $fillable = [
         'name',
         'email',
