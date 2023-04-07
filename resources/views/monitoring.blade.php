@@ -58,17 +58,9 @@
         </div>
 
         @include('components.sidebar')
+        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
             <!-- Header / Profile -->
-            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-
-                <div class="bg-white p-4 w-full flex-row flex">
-                    <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer mr-auto" id="btnToggle2">
-
-                    <div class="items-center gap-x-2 justify-end hidden sm:flex">
-                        <img class="w-7" src="img/icons/default_profile.svg" alt="Profile Image">
-                        <p class="text-black font-semibold">PUPUT FEBRIANTI</p>
-                    </div>
-                </div>
+                @include('components.header')
 
             <!-- Breadcrumb -->
             <div class=" lg:p-2 lg:py-4 mx-8 mt-2">
@@ -86,90 +78,89 @@
                     <!-- NAVIGATOR HALAMAN COURSES -->
 
                     <li>
-                        <a class="text-dark-green font-semibold" href="#">Monitoring dosen</a>
+                        <a class="text-yellow-400 font-semibold" href="#">Monitoring dosen</a>
                     </li>
                 </ul>
             </div>
 
             {{-- content dashboard --}}
             <div class="px-2 mt-6 mx-10 lg:p-2 border-b-2 rounded-[10px] bg-white border-gray-300 shadow-md w-auto ">
-
                 <h1 class="pl-3 text-lg text-black font-semibold">MONITORING DOSEN</h1>
             </div>
             <div class="container p-10 pb-8 md:px-8 lg:px-11">
                 <div class="flex flex-col">
                     <div class="w-full flex">
                         <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-[720px] bg-white border-gray-300 shadow">
-                    <!-- <table> -->
-                    <form action="/createmonitoring" method="POST">
-                        @csrf
-                        @method('post')
-                        <div class="mb-2">
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
-                            <input type="date" id="date" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
-                            dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="nama lengkap" required>
+                            <!-- <table> -->
+                            <form action="/createmonitoring" method="POST">
+                                @csrf
+                                @method('post')
+                                <div class="mb-2">
+                                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
+                                    <input type="date" id="date" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="nama lengkap" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
+                                    <input type="time" id="time" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="nim mahasiswa" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
+                                    <textarea rows="3" cols="50" id="deskripsi" name="bahasan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                    dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    </textarea>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode pembelajaran</label>
+                                    <textarea rows="3" cols="50" id="metode" name="pembelajaran" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                    dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    </textarea>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen</label>
+                                    <input type="dosen" id="dosen" name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                    dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+                                </div>
+                                <div class="flex items-start mb-3">
+                                </div>
+                                <button type="submit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none
+                                font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-400
+                                dark:focus:ring-yellow-400">Submit</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-2">
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
-                            <input type="time" id="time" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-                            focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
-                            dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="nim mahasiswa" required>
-                        </div>
-                        <div class="mb-2">
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
-                            <textarea rows="3" cols="50" id="deskripsi" name="bahasan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                            dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                            </textarea>
-                        </div>
-                        <div class="mb-2">
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode pembelajaran</label>
-                            <textarea rows="3" cols="50" id="metode" name="pembelajaran" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                            dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                            </textarea>
-                        </div>
-                        <div class="mb-2">
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen</label>
-                            <input type="dosen" id="dosen" name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                            dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
-                        </div>
-                        <div class="flex items-start mb-3">
-                        </div>
-                        <button type="submit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none
-                        font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-400
-                        dark:focus:ring-yellow-400">Submit</button>
-                        </div>
-                    </form>
                     </div>
                 </div>
             </div>
         </div>
 
-<!--JS Sidebar-->
-<script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <script>
-        let btnToggle = document.getElementById('btnToggle');
-        let btnToggle2 = document.getElementById('btnToggle2');
-        let sidebar = document.querySelector('.sidebar');
-        let leftNav = document.getElementById("left-nav");
-        btnToggle.onclick = function() {
-            sidebar.classList.toggle('in-active');
-        }
+        <!--JS Sidebar-->
+        <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+        <script>
+            let btnToggle = document.getElementById('btnToggle');
+            let btnToggle2 = document.getElementById('btnToggle2');
+            let sidebar = document.querySelector('.sidebar');
+            let leftNav = document.getElementById("left-nav");
+            btnToggle.onclick = function() {
+                sidebar.classList.toggle('in-active');
+            }
 
-        btnToggle2.onclick = function() {
-            leftNav.classList.toggle('hidden');
-        }
-    </script>
+            btnToggle2.onclick = function() {
+                leftNav.classList.toggle('hidden');
+            }
+        </script>
 
         <script>
-   $(document).ready(function () {
+            $(document).ready(function () {
                 $('#dataTable').DataTable();
-
             });
         </script>
     </body>

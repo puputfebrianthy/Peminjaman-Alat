@@ -72,7 +72,7 @@
                 <div class="container flex flex-wrap justify-between items-center mx-auto">
                     <a id="home" href="#home" class="flex items-center ">
                         <img src="img/uncok.png" class="mr-3 h-6 sm:h-9" alt="Logouncok" />
-                        <div class="text-white font-medium">Universitas Cokroaminoto Palopo</div>
+                        <div class="text-white font-medium text-lg">Universitas Cokroaminoto Palopo</div>
                     </a>
                     <button data-collapse-toggle="mobile-menu" type="button"
                         class="inline-flex items-center p-2 ml-3 text-sm text-yellow-400 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-[659093] dark:hover:bg-yellow-400 dark:focus:ring-yellow-400"
@@ -97,19 +97,19 @@
                         <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                             <li>
                                 <a href="#home"
-                                    class=" nav-link block py-2 pr-4 pl-3 text-white hover:bg-white hover:text-black rounded-[5px]">Home</a>
+                                    class="text-sm nav-link block py-2 pr-4 pl-3 text-white hover:text-black rounded-[5px]">Home</a>
                             </li>
                             <li>
                                 <a href="#fasilitas"
-                                    class=" nav-link block py-2 pr-4 pl-3 text-white hover:bg-white  hover:text-black rounded-[5px] ">Fasilitas</a>
+                                    class="text-sm nav-link block py-2 pr-4 pl-3 text-white  hover:text-black rounded-[5px] ">Fasilitas</a>
                             </li>
                             <li>
                                 <a href="#informasi"
-                                    class=" nav-link block py-2 pr-4 pl-3 text-white  hover:bg-white  hover:text-black rounded-[5px] ">Informasi</a>
+                                    class="text-sm nav-link block py-2 pr-4 pl-3 text-white   hover:text-black rounded-[5px] ">Informasi</a>
                             </li>
                             <li>
                                 <a href="login"
-                                    class=" nav-link block py-2 pr-4 pl-3 text-white hover:bg-white hover:text-black rounded-[5px]  ">Login</a>
+                                    class="text-sm nav-link block py-2 pr-4 pl-3 text-white hover:text-black rounded-[5px]  ">Login</a>
                             </li>
 
                         </ul>
@@ -145,7 +145,7 @@
                                 <div class="mt-8 smx:space-y-5">
                                     <br>
                                     <button>
-                                        <a href="dashboard" type="button"
+                                        <a href="/dashboard" type="button"
                                             class="absolute mb-300 shadow-md w-50 text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 -mt-10 text-center inline-flex items-center">
                                             Selanjutnya
                                             <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"

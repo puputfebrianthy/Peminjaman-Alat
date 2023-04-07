@@ -59,17 +59,10 @@
 
     @include('components.sidebar')
 
+    <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
         <!-- Header / Profile -->
-        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
 
-            <div class="bg-white p-4 w-full flex-row flex">
-                <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer mr-auto" id="btnToggle2">
-
-                <div class="items-center gap-x-2 justify-end hidden sm:flex">
-                    <img class="w-7" src="img/icons/default_profile.svg" alt="Profile Image">
-                    <p class="text-black font-semibold">PUPUT FEBRIANTI</p>
-                </div>
-            </div>
+            @include('components.header')
 
             <!-- Breadcrumb -->
             <div class="lg:p-2 lg:py-4 mx-8 mt-2">
@@ -95,7 +88,7 @@
                     <!-- NAVIGATOR HALAMAN COURSES -->
 
                     <li>
-                        <a class="text-dark-green font-semibold" href="#">Riwayat peminjaman alat</a>
+                        <a class="text-yellow-400 font-semibold" href="#">Riwayat peminjaman alat</a>
                     </li>
                 </ul>
             </div>
@@ -117,18 +110,27 @@
                                         Nama
                                     </th>
                                     <th class="p-8 text-xs text-gray-500">
-                                        Alat
+                                        Nim
                                     </th>
-                                    <th class="p-8 text-xs text-gray-500">
-                                        Dosen
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Nama Dosen
                                     </th>
-                                    <th class="p-8 text-xs text-gray-500">
-                                        Tanggal
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Mata kuliah
                                     </th>
-                                    <th class="px-6 py-2 text-xs text-gray-500">
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Ruangan
+                                    </th>
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Alat Pinjaman
+                                    </th>
+                                    <th class="px-2 text-xs text-gray-500">
                                         Waktu
                                     </th>
-                                    <th class="px-6 py-2 text-xs text-gray-500">
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Tanggal
+                                    </th>
+                                    <th class="px-2 text-xs text-gray-500">
                                         Status
                                     </th>
                                 </tr>
@@ -139,28 +141,35 @@
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                         {{ $datas->nama }}
                                     </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                        {{ $datas->nim }}
+                                    </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <div class="text-sm text-gray-900">
+                                        <a href="#" class="px-4 py-1 text-xs">
+                                    {{ $datas->dosen }}</a>
+                                    </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                        {{ $datas->Matakuliah }}
+                                    </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                        {{ $datas->Kelas }}
+                                    </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
+                                        <div class="text-xs text-gray-900">
                                         {{ $datas->alat }}
                                         </div>
                                     </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <div class="text-sm text-black">
-                                            {{ $datas->dosen }}
-                                        </div>
+                                        <a href="#" class="px-4 py-1 text-xs">
+                                    {{ $datas->waktu }}</a>
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
                                         {{ $datas->tanggal }}
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <a href="#" class="px-4 py-1 text-sm">
-                                            {{ $datas->waktu }}
-                                        </a>
                                     </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
                                         <button type="button" class="text-white bg-green-800 font-medium flex-row flex
                                         items-center rounded-[2px] focus:outline-none mr-2">
-                                        <a href="#" class="px-1 py-1 text-sm rounded">
+                                        <a href="#" class="px-1 py-1 text-xs rounded">
                                             {{ $datas->status }}
                                         </a>
                                         </button>

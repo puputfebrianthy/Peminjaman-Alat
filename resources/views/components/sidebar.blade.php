@@ -23,7 +23,38 @@
                             <p class="font-semibold text-base">Dashboard</p>
                         </a>
                     </li>
+                    @guest
+                    <li>
+                        <a href="/ketersediaanAlat" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                              </svg>
+                            <p class="font-semibold text-base">Ketersediaan alat</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/peminjaman" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+                            <p class="font-semibold text-base">Peminjaman alat</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/laporanPeminjaman" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+                                <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3z"/>
+                              </svg>
+                            <p class="font-semibold text-base">Laporan peminjaman</p>
+                        </a>
+                    </li>
+                    @endguest
                     <!-- ICON ALAT -->
+                    @auth
                     <li>
                         <a button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-database-fill-check" viewBox="0 0 16 16">
@@ -34,36 +65,31 @@
                             <svg class="w-4 h-4 ml-2 flex-row flex" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
                         <!-- Dropdown menu -->
                         <div id="dropdown" class="px-2 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-55 dark:bg-gray-700">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                            <li>
-                                <a href="/ketersediaanAlat" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Ketersediaan Alat</a>
-                            </li>
-                            <li>
-                                <a href="/peminjaman" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Peminjaman alat</a>
-                            </li>
-                            <li>
-                                <a href="/laporanPeminjaman" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Laporan Peminjaman Alat</a>
-                            </li>
-                            <li>
-                                <a href="/validasi" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Validasi peminjaman alat</a>
-                            </li>
-                            <li>
-                                <a href="/pengembalian" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Pengembalian alat</a>
-                            </li>
-                            <li>
-                                <a href="/history" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Riwayat peminjaman alat</a>
-                            </li>
-                        </ul>
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                @auth
+                                    <li>
+                                        <a href="/validasi" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Validasi peminjaman alat</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pengembalian" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Pengembalian alat</a>
+                                    </li>
+                                    <li>
+                                        <a href="/history" class="block px-4 py-2 text-black hover:bg-yellow-400 hover:text-white rounded-[5px]">Riwayat peminjaman alat</a>
+                                    </li>
+                                    @endauth
+                            </ul>
                         </div>
                     </li>
-                     <!-- ICON MONITORING DOSEN -->
-                     <li>
+                    @endauth
+                    <!-- ICON MONITORING DOSEN -->
+                    @auth
+                    <li>
                         <a href="/monitoring" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
                                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-                              </svg>
-                                <p class="font-semibold text-base">Monitoring Dosen</p>
-                            </a>
+                            </svg>
+                            <p class="font-semibold text-base">Monitoring Dosen</p>
+                        </a>
                     </li>
                     <!-- ICON LAPORAN HASIL MD -->
                     <li>
@@ -74,29 +100,63 @@
                             <p class="font-semibold text-base">Laporan Hasil MD</p>
                         </a>
                     </li>
+                    @if (Auth::user()->level == 'superadmin')
+                        <li>
+                            <a href="register" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <p class="font-semibold text-base">Buat Akun Baru</p>
+                            </a>
+                        </li>
+                    @endif
+                    @endauth
+
                 </ul>
             </div>
         </div>
 
         <!-- Bottom nav -->
+        @auth
         <div>
             <ul class="flex flex-col ">
                 <!-- ICON DAN TEXT LOG OUT -->
                 <li>
-                    <a href="beranda" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black" onclick=" return confirm('Anda yakin ingin keluar?')">
+                    <form action="{{ url('/logout') }}" method="post">
+                        @method('post')
+                        @csrf
+                        <button type="submit" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                          </svg>
-                        <p class="font-semibold text-lg">Logout</p>
+                        </svg>
+                        <p class="font-semibold text-lg">Keluar</p>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        @else
+        <div>
+            <ul class="flex flex-col ">
+                <!-- ICON DAN TEXT LOG OUT -->
+                <li>
+                    <a href="/" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                    </svg>
+                    <p class="font-semibold text-lg">Keluar</p>
                     </a>
                 </li>
             </ul>
         </div>
+        @endauth
     </div>
 
     <!-- MOBILE NAVBAR -->
-    <div id="left-nav" class="bg-opacity-50 bg-gray-500 fixed top-[130px] bottom-0 overflow-y-scroll inset-x-0 hidden z-10 transition-all ease-in-out duration-500 sm:hidden">
+    {{-- <div id="left-nav" class="bg-opacity-50 bg-gray-500 fixed top-[130px] bottom-0 overflow-y-scroll inset-x-0 hidden z-10 transition-all ease-in-out duration-500 sm:hidden">
 
         <div class="bg-yellow-400 w-[250px] h-screen px-6 py-6">
 
@@ -173,18 +233,33 @@
                                 <p class="font-semibold text-base">Laporan Hasil MD</p>
                             </a>
                         </li>
+                        <!-- ICON BUAT AKUN BARU -->
+                        <li>
+                            <a href="mld" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-richtext-fill" viewBox="0 0 16 16">
+                                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM7 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V9.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V9s1.54-1.274 1.639-1.208zM5 11h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/>
+                                  </svg>
+                                <p class="font-semibold text-base">Buat Akun Baru</p>
+                            </a>
+                        </li>
                         <!-- ICON LOG OUT -->
                         <li>
-                            <a href="" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black" onclick=" return confirm('Anda yakin ingin keluar?')">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-                                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                                  </svg>
-                                <p class="font-semibold text-base">Logout</p>
+
+                                <form action="{{ url('/logout') }}" method="post">
+                                    @method('post')
+                                    @csrf
+                                    <button type="submit" class="flex items-center gap-x-4 h-[50px] rounded-xl px-4 hover:bg-white text-white hover:text-black" onclick=" return confirm('Anda yakin ingin keluar?')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                    </svg>
+                                    <p class="font-semibold text-lg">Logout</p>
+                                    </button>
+                                </form>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}

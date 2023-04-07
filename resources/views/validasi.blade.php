@@ -61,18 +61,10 @@
         </div>
 
         @include('components.sidebar')
+        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
 
             <!-- Header / Profile -->
-            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-
-                <div class="bg-white p-4 w-full flex-row flex">
-                    <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer mr-auto" id="btnToggle2">
-
-                    <div class="items-center gap-x-2 justify-end hidden sm:flex">
-                        <img class="w-7" src="img/icons/default_profile.svg" alt="Profile Image">
-                        <p class="text-black font-semibold">PUPUT FEBRIANTI</p>
-                    </div>
-                </div>
+                @include('components.header')
 
             <!-- Breadcrumb -->
             <div class="lg:p-2 lg:py-4 mx-8 mt-2">
@@ -98,15 +90,13 @@
                     <!-- NAVIGATOR HALAMAN COURSES -->
 
                     <li>
-                        <a class="text-dark-green font-semibold" href="#">Validasi peminjaman</a>
+                        <a class="text-yellow-400 font-semibold" href="#">Validasi peminjaman</a>
                     </li>
                 </ul>
             </div>
 
-
             {{-- content dashboard --}}
             <div class="px-2 mt-6 mx-10 lg:p-2 border-b-2 rounded-[10px] bg-white border-gray-300 shadow-md w-auto ">
-
                 <h1 class="pl-3 text-lg text-black font-semibold">VALIDASI PEMINJAMAN</h1>
             </div>
             <div class="container p-10 pb-8 md:px-8 lg:px-11">
@@ -117,22 +107,28 @@
                                     <thead class="bg-gray-100">
                                 <tr>
                                     <th class="p-2 text-xs text-gray-500">
-                                        No
-                                    </th>
-                                    <th class="p-2 text-xs text-gray-500">
                                         Nama
                                     </th>
                                     <th class="p-2 text-xs text-gray-500">
-                                        Alat
+                                        Nim
                                     </th>
                                     <th class="p-2 text-xs text-gray-500">
-                                        Dosen
+                                        Nama Dosen
                                     </th>
                                     <th class="p-2 text-xs text-gray-500">
-                                        Tanggal
+                                        Mata kuliah
+                                    </th>
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Ruangan
+                                    </th>
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Alat Pinjaman
                                     </th>
                                     <th class="px-2 text-xs text-gray-500">
                                         Waktu
+                                    </th>
+                                    <th class="p-2 text-xs text-gray-500">
+                                        Tanggal
                                     </th>
                                     <th class="px-2 text-xs text-gray-500">
                                         Status
@@ -143,46 +139,50 @@
                             @foreach ($datas as $datas)
                             <tbody class="bg-white">
                                 <tr class="whitespace-nowrap">
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-black">
-                                        {{ $loop->iteration }}
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
                                         {{ $datas->nama }}
                                     </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                        {{ $datas->nim }}
+                                    </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <div class="text-sm text-gray-900">
+                                        <a href="#" class="px-4 py-1 text-xs">
+                                    {{ $datas->dosen }}</a>
+                                    </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                        {{ $datas->Matakuliah }}
+                                    </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                        {{ $datas->Kelas }}
+                                    </td>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
+                                        <div class="text-xs text-gray-900">
                                         {{ $datas->alat }}
                                         </div>
                                     </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <div class="text-sm text-black">
-                                        {{ $datas->dosen }}
-                                        </div>
+                                        <a href="#" class="px-4 py-1 text-xs">
+                                    {{ $datas->waktu }}</a>
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
                                         {{ $datas->tanggal }}
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <a href="#" class="px-4 py-1 text-sm">
-                                       {{ $datas->waktu }}</a>
-                                    </td>
-
                                     {{-- ICONTS BUTTON --}}
                                     <td class=" border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
                                           <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium flex-row flex
                                           items-center rounded-[3px] px-2 py-1 focus:outline-none mr-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                              </svg>
-                                            <p class="font-normal text-xs">Setuju</p>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+                                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                            <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+                                          </svg>
                                         </button>
 
                                         <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 font-medium flex-row flex
                                           items-center rounded-[3px] px-2 py-1 focus:outline-none ">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-x" viewBox="0 0 16 16">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                           </svg>
-                                            <p class="font-normal text-xs">Tolak</p>
                                         </button>
                                     </td>
                                     {{-- AND ICONTS --}}

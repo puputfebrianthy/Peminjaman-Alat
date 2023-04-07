@@ -58,30 +58,22 @@
         </div>
 
         @include('components.sidebar')
+        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
             <!-- Header / Profile -->
-            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-
-                <div class="bg-white p-4 w-full flex-row flex">
-                    <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer mr-auto" id="btnToggle2">
-
-                    <div class="items-center gap-x-4 justify-end hidden sm:flex">
-                        <img class="w-10" src="img/icons/default_profile.svg" alt="Profile Image">
-                        <p class="text-dark-green font-semibold">PUPUT FEBRIANTI</p>
-                    </div>
-                </div>
+            @include('components.header')
 
             <!-- Breadcrumb -->
             <div class="p-2 lg:p-8 mx-2 mt-3">
-            <a href="#" class="shadow-lg flex flex-col items-center bg-white border border-gray-200 rounded-lg md:flex-row md:max-w-sm ">
-                <img class="h-24 max-w-lg w-[140px] rounded-2xl" src="img/wanita.png" alt="">
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Puput Febrianti</h5>
-                    <hr>
-                    <p class="mb-2 font-sans text-gray-700 dark:text-gray-400">Mahasiswa</p>
-                </div>
-            </a>
-
+                <a href="#" class="shadow-lg flex flex-col items-center bg-white border border-gray-200 rounded-lg md:flex-row md:max-w-sm ">
+                    <img class="h-32 max-w-xl w-[140px] rounded-2xl" src="img/cowok.png" alt="">
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vicky bin djusmin</h5>
+                        <hr>
+                        <p class="mb-2 font-sans text-gray-700 dark:text-gray-400">Dosen</p>
+                    </div>
+                </a>
             </div>
+        </div>
 
 <!--JS Sidebar-->
 <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>

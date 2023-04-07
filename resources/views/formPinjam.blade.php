@@ -58,19 +58,9 @@
         </div>
 
         @include('components.sidebar')
-
+        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
             <!-- Header / Profile -->
-            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-
-                <div class="bg-white p-4 w-full flex-row flex">
-                    <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer mr-auto" id="btnToggle2">
-
-                    <div class="items-center gap-x-2 justify-end hidden sm:flex">
-                        <img class="w-7" src="img/icons/default_profile.svg" alt="Profile Image">
-                        <p class="text-black font-semibold">PUPUT FEBRIANTI</p>
-                    </div>
-                </div>
-
+            @include('components.header')
             <!-- Breadcrumb -->
             <div class=" lg:p-2 lg:py-4 mx-8 mt-2">
                 <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
@@ -84,18 +74,10 @@
                         <span class="text-light-green">>></span>
                     </li>
 
-                    <li>
-                        <a class="text-light-green" href="#">Data Peminjam</a>
-                    </li>
-
-                    <li>
-                        <span class="text-light-green">>></span>
-                    </li>
-
                     <!-- NAVIGATOR HALAMAN COURSES -->
 
                     <li>
-                        <a class="text-dark-green font-semibold" href="#">Peminjaman alat</a>
+                        <a class="text-yellow-400 font-semibold" href="#">Peminjaman alat</a>
                     </li>
                 </ul>
             </div>
@@ -126,13 +108,6 @@
                                      dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nim mahasiswa" required>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor Hp</label>
-                                    <input type="nomor" id="nomor" name="nomor" class="bg-gray-50 border border-gray-300 text-gray-900
-                                    text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
-                                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-                                    dark:focus:border-blue-500" placeholder="nomor hp siswa" required>
-                                </div>
-                                <div class="mb-2">
                                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Dosen</label>
                                     <input type="dosen" id="dosen" name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900
                                     text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
@@ -140,11 +115,39 @@
                                     dark:focus:border-blue-500" placeholder="nama dosen mengajar" required>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alat Pinjam</label>
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mata Kuliah</label>
+                                    <input type="kuliah" id="kuliah" name="kuliah" class="bg-gray-50 border border-gray-300 text-gray-900
+                                    text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+                                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+                                    dark:focus:border-blue-500" placeholder="mata kuliah" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ruangan</label>
+                                    <input type="ruangan" id="ruangan" name="ruangan" class="bg-gray-50 border border-gray-300 text-gray-900
+                                    text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+                                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+                                    dark:focus:border-blue-500" placeholder="ruangan" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor Hp</label>
+                                    <input type="nomor" id="nomor" name="nomor" class="bg-gray-50 border border-gray-300 text-gray-900
+                                    text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+                                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+                                    dark:focus:border-blue-500" placeholder="nomor hp siswa" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alat Pinjaman</label>
                                     <input type="alat" id="alat" name="alat" class="bg-gray-50 border border-gray-300 text-gray-900
                                     text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                     dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
                                     dark:focus:border-blue-500" placeholder="alat yang di pinjam" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
+                                    <input type="time" id="time" name="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900
+                                    text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+                                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+                                    dark:focus:border-blue-500" required>
                                 </div>
                                 <div class="mb-2">
                                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal</label>
@@ -163,6 +166,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
 <!--JS Sidebar-->
 <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
