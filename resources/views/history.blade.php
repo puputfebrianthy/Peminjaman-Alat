@@ -149,10 +149,10 @@
                                     {{ $datas->dosen }}</a>
                                     </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
-                                        {{ $datas->Matakuliah }}
+                                        {{ $datas->matakuliah }}
                                     </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
-                                        {{ $datas->Kelas }}
+                                        {{ $datas->kelas }}
                                     </td>
                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
                                         <div class="text-xs text-gray-900">

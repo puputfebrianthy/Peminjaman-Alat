@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\pengembalian;
 use Illuminate\Http\Request;
+use App\Models\peminjamanAlat;
 use Illuminate\Support\Facades\DB;
+
 class PengembalianController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class PengembalianController extends Controller
      */
     public function index()
     {
-        $datas = DB::table('tb_peminjaman')->get();
+        $datas = DB::table('tb_peminjaman')
+        ->where('status', 'Diterima')->get();
         return view('pengembalian', compact('datas') );
     }
 
@@ -34,9 +37,13 @@ class PengembalianController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        peminjamanAlat::where('id', $id)->update([
+            'status' => 'Dikembalikan'
+        ]);
+        
+        return back();
     }
 
     /**

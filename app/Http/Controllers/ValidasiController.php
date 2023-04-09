@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\validasi;
+use App\Models\peminjamanAlat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class ValidasiController extends Controller
@@ -21,6 +22,11 @@ class ValidasiController extends Controller
         return view('validasi', compact('datas'));
     }
 
+    // public function terimapeminjaman(Request $request, $id)
+    // {
+    //     $data = validasi::where('id', $id)->first();
+    //     return dd($data);
+    // }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,9 +43,23 @@ class ValidasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        // dd($data);
+        peminjamanAlat::where('id', $id)->update([
+            'status' => 'Diterima'
+        ]);
+        
+        return back();
+    }
+    public function tolak(Request $request, $id)
+    {
+        // dd($data);
+        peminjamanAlat::where('id', $id)->update([
+            'status' => 'Ditolak'
+        ]);
+        
+        return back();
     }
 
     /**

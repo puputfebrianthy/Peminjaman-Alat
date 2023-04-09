@@ -16,7 +16,8 @@ class PeminjamanAlatController extends Controller
     public function index()
     {
         $datas = DB::table('tb_peminjaman')
-        ->where('status', 'Diterima')->get();
+        // ->where('status', 'Diterima')
+        ->get();
         // return dd ($datas);
         return view('laporanPeminjaman', compact('datas'));
     }

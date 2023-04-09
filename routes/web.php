@@ -49,8 +49,11 @@ Route::group(['middleware' => ['auth', 'cekUserLogin:superadmin,admin']], functi
     Route::post('/logout', [LoginController::class, 'logout']);
 
     Route::get('/validasi', [ValidasiController::class, 'index']);
+    Route::get('/validasi/diterima/{id}', [ValidasiController::class, 'store']);
+    Route::get('/validasi/ditolak/{id}', [ValidasiController::class, 'tolak']);
 
     Route::get('/pengembalian', [PengembalianController::class, 'index']);
+    Route::get('/pengembalian/terferivikasi/{id}', [PengembalianController::class, 'store']);
 
     // Route::get('/monitoring', [MLDController::class, 'index']);
 

@@ -422,9 +422,9 @@ form.sign-in-form {
         <div class="signin-signup">
           <form action="/logindashboard" class="sign-in-form" method="POST">
             @csrf
-            @if (session()->has('loginError'))
+            {{-- @if (session()->has('loginError'))
                 <div class="alert alert-danger alert-dismissible fade show">{{session('loginError')}}</div>
-            @endif
+            @endif --}}
             <h2 class="title">Login</h2>
             {{-- email --}}
                 <div class="input-field">
@@ -433,7 +433,7 @@ form.sign-in-form {
                 </div>
 
                 @error('username')
-                <div class="invalid-feedback">{{ $message }}</div>
+                <div class="invalid-feedback text-red-400">{{ $message }}</div>
                 @enderror
 
             {{-- password --}}
@@ -443,7 +443,7 @@ form.sign-in-form {
                 </div>
 
                 @error('password')
-                <div class="invalid-feedback">{{ $message }}</div>
+                <div class="invalid-feedback text-red-400">{{ $message }}</div>
                 @enderror
 
                 <input type="submit" value="Login" class="btn solid" />

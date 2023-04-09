@@ -15,7 +15,8 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $datas = DB::table('tb_peminjaman')->get();
+        $datas = DB::table('tb_peminjaman')
+        ->where('status', 'Dikembalikan')->get();
         return view('history', compact('datas') );
     }
 
