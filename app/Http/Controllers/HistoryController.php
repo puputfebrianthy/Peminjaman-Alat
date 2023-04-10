@@ -15,6 +15,11 @@ class HistoryController extends Controller
      */
     public function index()
     {
+        // $datas = $request->search;
+        // return dd ($datas);
+
+        // $datas = $datas::where('nim', 'LIKE','%', $datas.'%')
+        // ->paginate(15);
         $datas = DB::table('tb_peminjaman')
         ->where('status', 'Dikembalikan')->get();
         return view('history', compact('datas') );

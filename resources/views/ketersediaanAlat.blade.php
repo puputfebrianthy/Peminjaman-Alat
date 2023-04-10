@@ -94,30 +94,30 @@
                     <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
                         <div class="w-full flex">
                             <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
-                                    <table class="pt-4 divide-y divide-slate-900" id="dataTable">
+                                    <table class="table-fixed pt-4 divide-y divide-slate-900" id="dataTable">
                                         <thead class="bg-gray-100">
                                     <tr>
-                                                <th class="p-2 text-xs text-gray-500">
+                                                <th class="p-2 text-sm text-gray-500">
                                                     Nama Alat
                                                 </th>
-                                                <th class="p-2 text-xs text-gray-500">
+                                                <th class="p-2 text-sm text-gray-500">
                                                     Jumlah Alat
                                                 </th>
-                                                <th class="p-2 text-xs text-gray-500">
+                                                <th class="p-2 text-sm text-gray-500">
                                                     Keterangan
                                                 </th>
                                             </tr>
                                         </thead>
 
                                         {{--HDMI--}}
-                                                <tr class="whitespace-nowrap ">
+                                                <tr class="text-center">
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
                                                         <div class="text-sm text-gray-900">
-                                                        <p>HDMI (High Definition Multimedia Interface) </p>
+                                                        <p>Kabel HDMI (High Definition Multimedia Interface) </p>
                                                         </div>
                                                     </td>
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
-                                                       <p>12</p>
+                                                       <p>14</p>
                                                     </td>
 
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-gray-500">
@@ -178,7 +178,7 @@
                                                         </div>
                                                     </td>
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
-                                                       <p>12</p>
+                                                       <p>9</p>
                                                     </td>
 
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-gray-500">
@@ -236,11 +236,11 @@
                                                 <tr class="whitespace-nowrap ">
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
                                                         <div class="text-sm text-gray-900">
-                                                        <p>Stop kontak </p>
+                                                        <p>Kabel Terminal  </p>
                                                         </div>
                                                     </td>
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
-                                                       <p>12</p>
+                                                       <p>4</p>
                                                     </td>
 
                                                     <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-gray-500">
@@ -261,7 +261,7 @@
                                                             <!-- Modal header -->
                                                             <div
                                                                 class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600 bg-yellow-500 hover:bg-yellow-500">
-                                                                <p class="font-semibold text-white">STOP KONTAK</p>
+                                                                <p class="font-semibold text-white">KABEL TERMINAL</p>
 
                                                                 <button type="button"
                                                                     class="text-[659093] bg-transparent hover:bg-white text-white hover:text-black rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
@@ -280,17 +280,140 @@
                                                                     <div>
                                                                         <img class="h-56 max-w-xl w-[240px] rounded-2xl" src="img/stopkontak.jpg" alt="stop kontak">
                                                                     </div>
-                                                                    <p class="text-justify font-normal">Stop kontak sendiri adalah sebuah terminal yang berfungsi untuk menghubungkan jalur listrik utama (main line) ke perangkat elektronik lainnya sehingga
+                                                                    <p class="text-justify font-normal">Kabel terminal sendiri adalah sebuah terminal yang berfungsi untuk menghubungkan jalur listrik utama (main line) ke perangkat elektronik lainnya sehingga
                                                                         perangkat elektronik tersebut dapat menerima arus listrik dan dapat berfungsi sebagaimana mestinya.
 
                                                                     </p>
-
                                                                 </div>
                                                             </div>
                                                             <!-- Modal footer -->
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </tr>
+                                            {{-- END --}}
+
+                                            {{-- VGA --}}
+                                            <tr class="whitespace-nowrap ">
+                                                <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
+                                                    <div class="text-sm text-gray-900">
+                                                    <p>Kabel VGA (Video Graphics Adapter) </p>
+                                                    </div>
+                                                </td>
+                                                <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
+                                                   <p>14</p>
+                                                </td>
+
+                                                <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-gray-500">
+                                                    <button
+                                                        class=" md:visible mdx:hidden md:mt-2 h-6 smx:text-xs smx:h-2 text-[10] mx-auto text-white bg-yellow-500 hover:bg-yellow-500
+                                                        focus:ring-4 focus:outline-none font-medium rounded-[3px] text-sm px-4 text-center dark:bg-yellow-500 dark:hover:bg-yellow-500"
+                                                        type="button" data-modal-toggle="VGA">
+                                                        aksi
+                                                    </button>
+                                                </td>
+
+                                            <!-- Main modal -->
+                                            <div id="VGA" tabindex="-1" aria-hidden="true"
+                                                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+                                                <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                                    <!-- Modal content -->
+                                                    <div class="relative bg-white rounded-lg shadow dark:bg-[#f7f2f0]">
+                                                        <!-- Modal header -->
+                                                        <div
+                                                            class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600 bg-yellow-500 hover:bg-yellow-500">
+                                                            <p class="font-semibold text-white">KABEL VGA</p>
+
+                                                            <button type="button"
+                                                                class="text-[659093] bg-transparent hover:bg-white text-white hover:text-black rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                                                                data-modal-toggle="VGA">
+                                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Modal body -->
+                                                        <div class="p-6 space-y-6 bg-scroll bg-contain overflow-auto  h-54 min-w-full ">
+                                                            <div class="grid grid-cols-2 gap-2 pl-5 py-5 sm-flex-10 ">
+                                                                <div>
+                                                                    <img class="h-56 max-w-xl w-[240px] rounded-2xl" src="img/VGA.jpg" alt="VGA">
+                                                                </div>
+                                                                <p class="text-justify font-normal"> VGA (Video Graphics Adapter) adalah perangkat keras komputer yang berfungsi
+                                                                    menerjemahkan tampilan ke layar monitor.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Modal footer -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </tr>
+                                            {{-- END --}}
+
+                                            {{-- VGA --}}
+                                            <tr class="whitespace-nowrap ">
+                                                <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
+                                                    <div class="text-sm text-gray-900">
+                                                    <p>Kabel Power </p>
+                                                    </div>
+                                                </td>
+                                                <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-center">
+                                                   <p>9</p>
+                                                </td>
+
+                                                <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-gray-500">
+                                                    <button
+                                                        class=" md:visible mdx:hidden md:mt-2 h-6 smx:text-xs smx:h-2 text-[10] mx-auto text-white bg-yellow-500 hover:bg-yellow-500
+                                                        focus:ring-4 focus:outline-none font-medium rounded-[3px] text-sm px-4 text-center dark:bg-yellow-500 dark:hover:bg-yellow-500"
+                                                        type="button" data-modal-toggle="power">
+                                                        aksi
+                                                    </button>
+                                                </td>
+
+                                            <!-- Main modal -->
+                                            <div id="power" tabindex="-1" aria-hidden="true"
+                                                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+                                                <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                                    <!-- Modal content -->
+                                                    <div class="relative bg-white rounded-lg shadow dark:bg-[#f7f2f0]">
+                                                        <!-- Modal header -->
+                                                        <div
+                                                            class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600 bg-yellow-500 hover:bg-yellow-500">
+                                                            <p class="font-semibold text-white">KABEL POWER</p>
+
+                                                            <button type="button"
+                                                                class="text-[659093] bg-transparent hover:bg-white text-white hover:text-black rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                                                                data-modal-toggle="power">
+                                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Modal body -->
+                                                        <div class="p-6 space-y-6 bg-scroll bg-contain overflow-auto  h-54 min-w-full ">
+                                                            <div class="grid grid-cols-2 gap-2 pl-5 py-5 sm-flex-10 ">
+                                                                <div>
+                                                                    <img class="h-56 max-w-xl w-[240px] rounded-2xl" src="img/power.jpg" alt="power">
+                                                                </div>
+                                                                <p class="text-justify font-normal"> Kabel power adalah kabel listrik,
+                                                                    rakitan dari satu atau lebih konduktor listrik, biasanya disatukan dengan
+                                                                    selubung keseluruhan. Rakitan digunakan untuk transmisi tenaga listrik. Kabel
+                                                                    power dapat dipasang sebagai kabel permanen di dalam gedung, terkubur di dalam tanah,
+                                                                    berjalan di atas kepala, atau terbuka.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Modal footer -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </tr>
                                             {{-- END --}}
                                     </table>
                                 </div>

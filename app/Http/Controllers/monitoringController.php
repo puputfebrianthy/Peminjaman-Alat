@@ -43,6 +43,8 @@ class monitoringController extends Controller
             'waktu' => $request->waktu,
             'pembahasan' => $request->bahasan,
             'pembelajaran' => $request->pembelajaran,
+            'hadir'=>$request->hadir,
+            'alpa'=>$request->alpa,
             'dosen' => $request->dosen,
         ];
         MLD::create($dataCreate);

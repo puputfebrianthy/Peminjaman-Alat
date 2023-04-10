@@ -101,37 +101,37 @@
                     <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
                         <div class="w-full flex">
                             <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
-                                <table class="pt-4 divide-y divide-gray-300" id="dataTable">
+                                <table class="table-fixed pt-4 divide-y divide-gray-300" id="dataTable">
                                     <thead class="bg-gray-100">
                                         <tr>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 No
                                             </th>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 Nama
                                             </th>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 Nim
                                             </th>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 Nama Dosen
                                             </th>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 Mata kuliah
                                             </th>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 Ruangan
                                             </th>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 Alat Pinjaman
                                             </th>
-                                            <th class="px-2 text-xs text-gray-500">
+                                            <th class="px-2 text-sm text-gray-500">
                                                 Waktu
                                             </th>
-                                            <th class="p-2 text-xs text-gray-500">
+                                            <th class="p-2 text-sm text-gray-500">
                                                 Tanggal
                                             </th>
-                                            <th class="px-2 text-xs text-gray-500">
+                                            <th class="px-2 text-sm text-gray-500">
                                                 Action
                                             </th>
                                         </tr>
@@ -139,44 +139,40 @@
 
                                     @foreach ($datas as $datas)
                                     <tbody class="bg-white">
-                                        <tr class="whitespace-nowrap">
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-xs text-center text-black">
+                                        <tr class="text-center">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-black">
                                                 {{ $loop->iteration }}
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                                 {{ $datas->nama }}
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                                 {{ $datas->nim }}
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                                <a href="#" class="px-4 py-1 text-xs">
-                                            {{ $datas->dosen }}</a>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->dosen }}
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                                 {{ $datas->matakuliah }}
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                                 {{ $datas->kelas }}
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                                <div class="text-xs text-gray-900">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                                 {{ $datas->alat }}
-                                                </div>
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                                <a href="#" class="px-4 py-1 text-xs">
-                                            {{ $datas->waktu }}</a>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->waktu }}
                                             </td>
-                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                                 {{ $datas->tanggal }}
                                             </td>
 
                                             {{-- ICONTS BUTTON --}}
                                             <td class=" border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row justify-center flex">
                                                 <a href="{{url("/pengembalian/terferivikasi/{$datas->id}")}}" onclick="return confirm('Barang Dikembalikan?')" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 font-medium flex-row flex
-                                                items-center rounded-[3px] px-2 py-1 focus:outline-none mr-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                                                items-center rounded-[3px] px-2 py-1 focus:outline-none mr-1 my-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
                                                     <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
                                                     <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
                                                     </svg>

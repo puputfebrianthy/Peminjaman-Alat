@@ -90,7 +90,7 @@
             <div class="container p-10 pb-8 md:px-8 lg:px-11">
                 <div class="flex flex-col">
                     <div class="w-full flex">
-                        <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-[720px] bg-white border-gray-300 shadow">
+                        <div class="lg:p-9 p-9 border-b-3 rounded-[5px] w-[720px] bg-white border-gray-300 shadow">
                             <!-- <table> -->
                             <form action="/createmonitoring" method="POST">
                                 @csrf
@@ -109,6 +109,11 @@
                                     dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="nim mahasiswa" required>
                                 </div>
+                                <div class="mb-2 font-medium text-sm text-gray-900">
+                                    <label for="password" class="block mb-4 text-sm font-medium text-gray-900 dark:text-white">Kehadiran mahasiswa</label>
+                                    <input type="checkbox" id="hadir" name="kehadiran"> Hadir
+                                    <input type="checkbox" id="alpa" name="kehadiran"> Tidak hadir
+                                </div>
                                 <div class="mb-2">
                                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
                                     <textarea rows="3" cols="50" id="deskripsi" name="bahasan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
@@ -124,10 +129,14 @@
                                     </textarea>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen</label>
-                                    <input type="dosen" id="dosen" name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen Mengajar</label>
+                                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                                    dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+                                    dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    <option type="dosen" id="dosen" name="dosen"> Vicky bin djusmin</option>
+                                    <option type="dosen" id="dosen" name="dosen"> Vicky bin djusmin</option>
+                                    <option type="dosen" id="dosen" name="dosen"> Vicky bin djusmin</option>
+                                </select>
                                 </div>
                                 <div class="flex items-start mb-3">
                                 </div>
