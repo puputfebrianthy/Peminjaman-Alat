@@ -157,7 +157,15 @@
                                             {{ $datas->tanggal }}
                                         </td>
                                         <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
-                                            <button type="button" class="text-white bg-sky-600 font-medium flex-row flex
+                                            <button type="button" class="text-white 
+                                            @if($datas->status == 'Diterima')
+                                             bg-sky-600 
+                                            @elseif($datas->status == 'Ditolak')
+                                            bg-slate-400
+                                            @else
+                                            bg-green-400
+                                            @endif
+                                             font-medium flex-row flex
                                             items-center rounded-[2px] focus:outline-none mr-2">
                                             <a href="#" class="px-1 py-1 text-sm rounded">
                                                 {{ $datas->status }}

@@ -31,6 +31,10 @@ return view('formPinjam');
 });
 Route::get('/laporanPeminjaman', [PeminjamanAlatController::class, 'index']);
 Route::post('/createpinjam', [PeminjamanAlatController::class, 'store']);
+Route::get('/form', function () {
+    return view('formPinjam');
+});
+
 
 
 // Middleware untuk tamu yang belum login
@@ -60,10 +64,6 @@ Route::group(['middleware' => ['auth', 'cekUserLogin:superadmin,admin']], functi
     Route::get('/history',[HistoryController::class, 'index']);
 
     Route::get('/mld', [MLDController::class, 'index']);
-
-    Route::get('/form', function () {
-        return view('formPinjam');
-    });
 
     //==MONITORING==
     Route::get('/monitoring', function () {

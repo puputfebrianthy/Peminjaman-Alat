@@ -54,7 +54,7 @@ class PeminjamanAlatController extends Controller
         ];
         // return dd($dataCreate);
         peminjamanAlat::create($dataCreate);
-        return redirect('/validasi');
+        return redirect('/laporanPeminjaman');
     }
 
     /**
