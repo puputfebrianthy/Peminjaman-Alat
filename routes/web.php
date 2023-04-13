@@ -29,6 +29,9 @@ Route::get('/ketersediaanAlat', [KetersediaanAlatController::class, 'index']);
 Route::get('/peminjaman', function () {
 return view('formPinjam');
 });
+Route::get('/surat', function () {
+    return view('Surat');
+    });
 Route::get('/laporanPeminjaman', [PeminjamanAlatController::class, 'index']);
 Route::post('/createpinjam', [PeminjamanAlatController::class, 'store']);
 
@@ -72,5 +75,4 @@ Route::group(['middleware' => ['auth', 'cekUserLogin:superadmin,admin']], functi
     Route::post('/createmonitoring', [monitoringController::class, 'store']);
 
 });
-
 
