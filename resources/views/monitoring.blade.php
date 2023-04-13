@@ -96,6 +96,13 @@
                                 @csrf
                                 @method('post')
                                 <div class="mb-2">
+                                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mata Kuliah</label>
+                                    <input type="kuliah" id="kuliah" name="kuliah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required>
+                                </div>
+                                <div class="mb-2">
                                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
                                     <input type="date" id="date" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
@@ -103,11 +110,32 @@
                                     placeholder="nama lengkap" required>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
+                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam</label>
                                     <input type="time" id="time" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
                                     focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
                                     dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="nim mahasiswa" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="sks" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">SKS</label>
+                                    <input type="sks" id="sks" name="sks" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="SKS" required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="semester" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Semester</label>
+                                    <input type="semester" id="semester" name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="kelas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">kelas</label>
+                                    <input type="kelas" id="kelas" name="kelas" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required>
                                 </div>
                                 <div class="mb-2 font-medium text-sm text-gray-900">
                                     <label for="password" class="block mb-4 text-sm font-medium text-gray-900 dark:text-white">Kehadiran mahasiswa</label>
