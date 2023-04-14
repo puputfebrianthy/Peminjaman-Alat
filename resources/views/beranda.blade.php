@@ -130,8 +130,8 @@
 
                                     <h1 class="text-lg font-inter md:text-4xl mdx:text-4xl fadein">
                                         <span class="text-sm mdx:text-xl">HELLO THERE</span> <br> Sistem Informasi  <br> <span
-                                            class="text-yellow-400">  Pelayanan </span> <span class="text-[#000000]">Peminjaman </span> <br> <span class="text-[#000000]"> Alat </span><span  class="text-yellow-400">Fakultas Teknik </span><br>
-                                            <span class="text-[#000000]">  Informatika</span>
+                                            class="text-yellow-400">  Pelayanan </span> <span class="text-[#000000]">Peminjaman </span> <br> <span class="text-[#000000]"> Alat dan Monitoring Dosen</span><span  class="text-yellow-400">Prodi Informatika </span><br>
+                                            <span class="text-[#000000]">  Universitas Cokroaminoto Palopo</span>
 
                                     </h1>
                                     <p class="mt-10 rounded-md text-gray-500 text-justify ">

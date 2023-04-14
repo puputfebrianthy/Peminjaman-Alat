@@ -17,6 +17,7 @@ class PengembalianController extends Controller
     public function index()
     {
         $datas = DB::table('tb_peminjaman')
+        ->orderBy('created_at', 'desc')
         ->where('status', 'Diterima')->get();
         return view('pengembalian', compact('datas') );
     }

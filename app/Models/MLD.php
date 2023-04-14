@@ -10,5 +10,4 @@ class MLD extends Model
     use HasFactory;
     protected $table = 'tb_monitoring';
     protected $guarded = [''];
-    // protected $fillable = ['hari'];
 }

@@ -87,44 +87,44 @@
                 <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
                     <div class="w-full flex">
                         <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
-                            <table class="pt-4 divide-y divide-slate-900" id="dataTable">
+                            <table class="table-fixed pt-4 divide-y divide-slate-900" id="dataTable">
                                 <thead class="bg-gray-100">
                                     <tr>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             No
                                         </th>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             Nama
                                         </th>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             Nim
                                         </th>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             Nama Dosen
                                         </th>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             Mata kuliah
                                         </th>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             Ruangan
                                         </th>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             Alat Pinjaman
                                         </th>
-                                        <th class="px-2 text-xs text-gray-500">
+                                        <th class="px-2 text-sm text-gray-500">
                                             Waktu
                                         </th>
-                                        <th class="p-2 text-xs text-gray-500">
+                                        <th class="p-2 text-sm text-gray-500">
                                             Tanggal
                                         </th>
-                                        <th class="px-2 text-xs text-gray-500">
+                                        <th class="px-2 text-sm text-gray-500">
                                             Status
                                         </th>
                                     </tr>
                                 </thead>
                                 @foreach ($datas as $datas)
                                 <tbody class="bg-white">
-                                    <tr class="whitespace-nowrap">
+                                    <tr class="text-center">
                                         <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-black">
                                             {{ $loop->iteration }}
                                         </td>
@@ -134,9 +134,8 @@
                                         <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                             {{ $datas->nim }}
                                         </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                            <a href="#" class="px-4 py-1 text-sm">
-                                        {{ $datas->dosen }}</a>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                        {{ $datas->dosen }}
                                         </td>
                                         <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                             {{ $datas->matakuliah }}
@@ -144,30 +143,20 @@
                                         <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                             {{ $datas->kelas }}
                                         </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                            <div class="text-sm text-gray-900">
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                             {{ $datas->alat }}
-                                            </div>
                                         </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                            <a href="#" class="px-4 py-1 text-sm">
-                                        {{ $datas->waktu }}</a>
+                                        <td class="border bg- border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                        {{ $datas->waktu }}
                                         </td>
                                         <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                             {{ $datas->tanggal }}
                                         </td>
                                         <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
-                                            <button type="button" class="text-white 
-                                            @if($datas->status == 'Diterima')
-                                             bg-sky-600 
-                                            @elseif($datas->status == 'Ditolak')
-                                            bg-slate-400
-                                            @else
-                                            bg-green-400
-                                            @endif
-                                             font-medium flex-row flex
-                                            items-center rounded-[2px] focus:outline-none mr-2">
-                                            <a href="#" class="px-1 py-1 text-sm rounded">
+                                            <button type="button" class="text-white p-[2px] @if( $datas->status == 'Diterima') bg-cyan-600 @elseif ($datas->status == "Ditolak")
+                                                bg-red-600 @elseif($datas->status == 'Dibuat') bg-lime-600 @else bg-zinc-600 @endif font-medium flex-row flex
+                                            items-center rounded-[2px] focus:outline-none mr-1 my-4">
+                                            <a href="#" class="px-1 text-sm rounded bg">
                                                 {{ $datas->status }}
                                             </a>
                                             </button>
@@ -200,7 +189,6 @@
     <script>
     $(document).ready(function () {
                     $('#dataTable').DataTable();
-
                 });
     </script>
     </body>

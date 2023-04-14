@@ -16,7 +16,8 @@ class ValidasiController extends Controller
     public function index()
     {
         $datas = DB::table('tb_peminjaman')
-        ->where('tb_peminjaman.status','created')
+        ->where('tb_peminjaman.status','Dibuat')
+        ->orderBy('created_at', 'desc')
         ->get();
         // return dd($datas);
         return view('validasi', compact('datas'));

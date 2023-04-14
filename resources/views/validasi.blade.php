@@ -103,34 +103,34 @@
                 <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
                     <div class="w-full flex">
                         <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
-                                <table class="pt-4 divide-y divide-gray-300" id="dataTable">
-                                    <thead class="bg-gray-100">
+                                <table class="table-fixed pt-4 divide-y divide-gray-300 " id="dataTable">
+                                    <thead class=" bg-gray-100">
                                 <tr>
-                                    <th class="p-2 text-xs text-gray-500">
+                                    <th class="p-2 text-sm text-gray-500">
                                         Nama
                                     </th>
-                                    <th class="p-2 text-xs text-gray-500">
+                                    <th class="p-2 text-sm text-gray-500">
                                         Nim
                                     </th>
-                                    <th class="p-2 text-xs text-gray-500">
+                                    <th class="p-2 text-sm text-gray-500">
                                         Nama Dosen
                                     </th>
-                                    <th class="p-2 text-xs text-gray-500">
+                                    <th class="p-2 text-sm text-gray-500">
                                         Mata kuliah
                                     </th>
-                                    <th class="p-2 text-xs text-gray-500">
+                                    <th class="p-2 text-sm text-gray-500">
                                         Ruangan
                                     </th>
-                                    <th class="p-2 text-xs text-gray-500">
+                                    <th class="p-2 text-sm text-gray-500">
                                         Alat Pinjaman
                                     </th>
-                                    <th class="px-2 text-xs text-gray-500">
+                                    <th class="px-2 text-sm text-gray-500">
                                         Waktu
                                     </th>
-                                    <th class="p-2 text-xs text-gray-500">
+                                    <th class="p-2 text-sm text-gray-500">
                                         Tanggal
                                     </th>
-                                    <th class="px-2 text-xs text-gray-500">
+                                    <th class="px-2 text-sm text-gray-500">
                                         Action
                                     </th>
                                 </tr>
@@ -138,50 +138,44 @@
 
                             @foreach ($datas as $datas)
                             <tbody class="bg-white">
-                                <tr class="whitespace-nowrap">
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                <tr class="text-center">
+                                    <td class=" border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
                                         {{ $datas->nama }}
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
                                         {{ $datas->nim }}
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <a href="#" class="px-4 py-1 text-xs">
-                                    {{ $datas->dosen }}</a>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
+                                    {{ $datas->dosen }}
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
                                         {{ $datas->matakuliah }}
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
                                         {{ $datas->kelas }}
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <div class="text-xs text-gray-900">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
                                         {{ $datas->alat }}
-                                        </div>
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <a href="#" class="px-4 py-1 text-xs">
-                                    {{ $datas->waktu }}</a>
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
+                                    {{ $datas->waktu }}
                                     </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
+                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 text-sm  text-black">
                                         {{ $datas->tanggal }}
                                     </td>
                                     {{-- ICONTS BUTTON --}}
-                                    <td class=" border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
-                                          <a href="{{url("/validasi/diterima/{$datas->id}")}}" onclick="return confirm('Yakin Untuk Menyetujui?')" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium flex-row flex
-                                          items-center rounded-[3px] px-2 py-1 focus:outline-none mr-2">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
-                                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                            <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+                                    <td class="border border-r-0 border-l-0 border-t-0  border-slate-200 relative flex-row flex justify-center">
+                                          <a href="{{url("/validasi/diterima/{$datas->id}")}}" onclick="return confirm('Yakin Untuk Menyetujui?')" class="text-white bg-blue-700 hover:bg-blue-800 flex-row flex
+                                          items-center rounded-[3px] px-1 py-1 focus:outline-none mr-1 my-4">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-file-earmark-check-fill" viewBox="0 0 16 16">
+                                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm1.354 4.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
                                           </svg>
                                         </a>
 
-                                        <a href="{{url("/validasi/ditolak/{$datas->id}")}}" onclick="return confirm('Yakin Untuk Menolak?')" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 font-medium flex-row flex
-                                          items-center rounded-[3px] px-2 py-1 focus:outline-none ">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
-                                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                        <a href="{{url("/validasi/ditolak/{$datas->id}")}}" onclick="return confirm('Yakin Untuk Menolak?')" class="text-white bg-red-700 hover:bg-red-800 font-medium flex-row flex
+                                          items-center rounded-[3px] px-1 py-1 focus:outline-none mr-1 my-4 ">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-file-earmark-x-fill" viewBox="0 0 16 16">
+                                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.854 7.146 8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 1 1 .708-.708z"/>
                                           </svg>
                                         </a>
                                     </td>

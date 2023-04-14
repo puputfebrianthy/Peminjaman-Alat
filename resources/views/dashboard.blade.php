@@ -56,22 +56,23 @@
                 <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer" id="btnToggle">
             </div>
         </div>
+        <div class="flex items-center">
+            @include('components.sidebar')
+            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
+                <!-- Header / Profile -->
+                @include('components.header')
 
-        @include('components.sidebar')
-        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-            <!-- Header / Profile -->
-            @include('components.header')
-
-            <!-- Breadcrumb -->
-            <div class="p-2 lg:p-8 mx-2 mt-3">
-                <a href="#" class="shadow-lg flex flex-col items-center bg-white border border-gray-200 rounded-lg md:flex-row md:max-w-sm ">
-                    <img class="h-32 max-w-xl w-[140px] rounded-2xl" src="img/cowok.png" alt="">
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vicky bin djusmin</h5>
-                        <hr>
-                        <p class="mb-2 font-sans text-gray-700 dark:text-gray-400">Dosen</p>
-                    </div>
-                </a>
+                <!-- Breadcrumb -->
+                <div class="p-2 lg:p-8 mx-2 mt-3">
+                    <a href="#" class="shadow-lg flex flex-col items-center bg-white border border-gray-200 rounded-lg md:flex-row md:max-w-sm ">
+                        <img class="h-32 max-w-xl w-[140px] rounded-2xl" src="img/cowok.png" alt="">
+                        <div class="flex flex-col justify-between p-4 leading-normal">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vicky bin djusmin</h5>
+                            <hr>
+                            <p class="mb-2 font-sans text-gray-700 dark:text-gray-400">Dosen</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -85,7 +86,6 @@
         btnToggle.onclick = function() {
             sidebar.classList.toggle('in-active');
         }
-
         btnToggle2.onclick = function() {
             leftNav.classList.toggle('hidden');
         }
@@ -94,7 +94,6 @@
         <script>
    $(document).ready(function () {
                 $('#dataTable').DataTable();
-
             });
         </script>
     </body>

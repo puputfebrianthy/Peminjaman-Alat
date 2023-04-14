@@ -90,50 +90,65 @@
             <div class="container p-10 pb-8 md:px-8 lg:px-11">
                 <div class="flex flex-col">
                     <div class="w-full flex">
-                        <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-[720px] bg-white border-gray-300 shadow">
+                        <div class="lg:p-9 p-9 border-b-3 rounded-[5px] w-[720px] bg-white border-gray-300 shadow">
                             <!-- <table> -->
                             <form action="/createmonitoring" method="POST">
                                 @csrf
                                 @method('post')
-                                <div class="mb-2">
-                                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
-                                    <input type="date" id="date" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                <div class="mb-4">
+                                    <label for="hari" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
+                                    <input type="date" id="hari" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
                                     dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="nama lengkap" required>
                                 </div>
-                                <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
-                                    <input type="time" id="time" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                <div class="mb-4">
+                                    <label for="waktu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
+                                    <input type="time" id="waktu" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
                                     focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
                                     dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="nim mahasiswa" required>
                                 </div>
-                                <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
-                                    <textarea rows="3" cols="50" id="deskripsi" name="bahasan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                <div class="mb-4 font-medium text-sm text-gray-900">
+                                    <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-2">
+                                        <div class="col sm:mb-4">
+                                            <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Hadir</label>
+                                            <input type="text" id="" name="hadir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hadir" required>      
+                                        </div>
+                                        <div class="col">
+                                            <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Tiak Hadir</label>
+                                            <input type="text" id="text" name="alpa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tidak Hadir" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="pembahasan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
+                                    <textarea rows="3" cols="50" id="deskripsi" name="pembahasan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
                                     dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                     </textarea>
                                 </div>
-                                <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode pembelajaran</label>
+                                <div class="mb-4">
+                                    <label for="pembelajaran" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode pembelajaran</label>
                                     <textarea rows="3" cols="50" id="metode" name="pembelajaran" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
                                     dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                     </textarea>
                                 </div>
-                                <div class="mb-2">
-                                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen</label>
-                                    <input type="dosen" id="dosen" name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                                    dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
+                                <div class="mb-4">
+                                    <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen Pengajar</label>
+                                    <select name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                        focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                        dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                        <option type=""> Vicky bin djusmin</option>
+                                        <option type=""> Vicky bin djusmin</option>
+                                        <option type=""> Vicky bin djusmin</option>
+                                    </select>
                                 </div>
                                 <div class="flex items-start mb-3">
-                                </div>
-                                <button type="submit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none
-                                font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-400
-                                dark:focus:ring-yellow-400">Submit</button>
+                                    <button type="submit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none
+                                    font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-400
+                                    dark:focus:ring-yellow-400">Submit</button>
                                 </div>
                             </form>
                         </div>

@@ -14,7 +14,9 @@ class MLDController extends Controller
      */
     public function index()
     {
-        $datas = DB::table('tb_monitoring')->get();
+        $datas = DB::table('tb_monitoring')
+        ->orderBy('created_at', 'desc')
+        ->get();
         // return dd($datas);
         return view('MLD', compact('datas') );
     }

@@ -13,10 +13,14 @@ class PeminjamanAlatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        // $datas = $request->search;
+        // return dd ($datas);
+
         $datas = DB::table('tb_peminjaman')
         // ->where('status', 'Diterima')
+        ->orderBy('created_at', 'desc')
         ->get();
         // return dd ($datas);
         return view('laporanPeminjaman', compact('datas'));
@@ -45,12 +49,14 @@ class PeminjamanAlatController extends Controller
         $dataCreate = [
             'nama' => $request->nama,
             'nim' => $request->nim,
+            'matakuliah' => $request ->matakuliah,
+            'kelas' =>$request ->kelas,
             'nomor' => $request->nomor,
             'dosen' => $request->dosen,
             'alat' => $request->alat,
             'waktu' => date('H:i:s'),
             'tanggal' => $request->tanggal,
-            'status' => 'Created',
+            'status' => 'Dibuat',
         ];
         // return dd($dataCreate);
         peminjamanAlat::create($dataCreate);

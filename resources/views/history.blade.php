@@ -56,14 +56,13 @@
             <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer" id="btnToggle">
         </div>
     </div>
-
-    @include('components.sidebar')
-
-    <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-        <!-- Header / Profile -->
+    
+    <div class="flex items-center">
+        @include('components.sidebar')
+        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
+            <!-- Header / Profile -->
 
             @include('components.header')
-
             <!-- Breadcrumb -->
             <div class="lg:p-2 lg:py-4 mx-8 mt-2">
                 <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
@@ -103,85 +102,83 @@
                 <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
                     <div class="w-full flex">
                         <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
-                                <table class="pt-4 divide-y divide-gray-300" id="dataTable">
-                                    <thead class="bg-gray-100">
-                                <tr>
-                                    <th class="p-8 text-xs text-gray-500">
-                                        Nama
-                                    </th>
-                                    <th class="p-8 text-xs text-gray-500">
-                                        Nim
-                                    </th>
-                                    <th class="p-2 text-xs text-gray-500">
-                                        Nama Dosen
-                                    </th>
-                                    <th class="p-2 text-xs text-gray-500">
-                                        Mata kuliah
-                                    </th>
-                                    <th class="p-2 text-xs text-gray-500">
-                                        Ruangan
-                                    </th>
-                                    <th class="p-2 text-xs text-gray-500">
-                                        Alat Pinjaman
-                                    </th>
-                                    <th class="px-2 text-xs text-gray-500">
-                                        Waktu
-                                    </th>
-                                    <th class="p-2 text-xs text-gray-500">
-                                        Tanggal
-                                    </th>
-                                    <th class="px-2 text-xs text-gray-500">
-                                        Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            @foreach ($datas as $datas)
-                            <tbody class="bg-white">
-                                <tr class="whitespace-nowrap">
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                        {{ $datas->nama }}
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
-                                        {{ $datas->nim }}
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <a href="#" class="px-4 py-1 text-xs">
-                                    {{ $datas->dosen }}</a>
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
-                                        {{ $datas->matakuliah }}
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
-                                        {{ $datas->kelas }}
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <div class="text-xs text-gray-900">
-                                        {{ $datas->alat }}
-                                        </div>
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
-                                        <a href="#" class="px-4 py-1 text-xs">
-                                    {{ $datas->waktu }}</a>
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-xs text-center text-black">
-                                        {{ $datas->tanggal }}
-                                    </td>
-                                    <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
-                                        <button type="button" class="text-white bg-green-800 font-medium flex-row flex
-                                        items-center rounded-[2px] focus:outline-none mr-2">
-                                        <a href="#" class="px-1 py-1 text-xs rounded">
-                                            {{ $datas->status }}
-                                        </a>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            @endforeach
-                        </table>
+                            <table class="table-fixed pt-4 divide-y divide-gray-300" id="dataTable">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="p-8 text-sm text-gray-500">
+                                            Nama
+                                        </th>
+                                        <th class="p-8 text-sm text-gray-500">
+                                            Nim
+                                        </th>
+                                        <th class="p-2 text-sm text-gray-500">
+                                            Nama Dosen
+                                        </th>
+                                        <th class="p-2 text-sm text-gray-500">
+                                            Mata kuliah
+                                        </th>
+                                        <th class="p-2 text-sm text-gray-500">
+                                            Ruangan
+                                        </th>
+                                        <th class="p-2 text-sm text-gray-500">
+                                            Alat Pinjaman
+                                        </th>
+                                        <th class="px-2 text-sm text-gray-500">
+                                            Waktu
+                                        </th>
+                                        <th class="p-2 text-sm text-gray-500">
+                                            Tanggal
+                                        </th>
+                                        <th class="px-2 text-sm text-gray-500">
+                                            Status
+                                        </th>
+                                    </tr>
+                                </thead>
+                                @foreach ($datas as $datas)
+                                <tbody class="bg-white">
+                                    <tr class="text-center">
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->nama }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->nim }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                        {{ $datas->dosen }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->matakuliah }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->kelas }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->alat }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                        {{ $datas->waktu }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->tanggal }}
+                                        </td>
+                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
+                                            <button type="button" class="text-white bg-green-800 font-medium flex-row flex
+                                            items-center rounded-[2px] focus:outline-none mr-2 my-4">
+                                            <a href="#" class="px-1 py-1 text-sm rounded">
+                                                {{ $datas->status }}
+                                            </a>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 <!--JS Sidebar-->
 <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
