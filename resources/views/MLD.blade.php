@@ -121,7 +121,7 @@
                                         <tbody class="bg-white">
                                             <tr class="text-center">
                                                 <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                                {{ $datas->hari }}
+                                                    {{ $datas->hari }}
                                                 </td>
                                                 <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
                                                     <div class="text-sm text-gray-900">
@@ -130,11 +130,11 @@
                                                 </td>
                                                 <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-center">
                                                     <div class="text-sm text-black">
-                                                        {{ $datas->pembahasan}}
+                                                        {{Str::words($datas->pembahasan, 6, ' ...')}}
                                                     </div>
                                                 </td>
                                                 <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                                    {{ $datas->pembelajaran }}
+                                                    {{Str::words($datas->pembelajaran, 6, ' ...')}}
                                                 </td>
                                                 <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
                                                     {{ $datas->hadir }}
@@ -149,13 +149,13 @@
                                                 </td>
                                                 {{-- ICONTS BUTTON --}}
                                                 <td class=" border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row justify-center flex">
-                                                    <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 font-medium flex-row flex
+                                                    <a href="{{url("/cetaksurat/{$datas->id}")}}" target="_blank" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 font-medium flex-row flex
                                                     items-center rounded-[3px] px-1 py-1 focus:outline-none mr-2 my-4">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-file-earmark-arrow-up" viewBox="0 0 16 16">
                                                         <path d="M8.5 11.5a.5.5 0 0 1-1 0V7.707L6.354 8.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 7.707V11.5z"/>
                                                         <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
                                                     </svg>
-                                                    </button>
+                                                    </a>
                                                 </td>
                                                 {{-- AND ICONTS --}}
                                             </tr>

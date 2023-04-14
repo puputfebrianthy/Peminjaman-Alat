@@ -64,12 +64,34 @@
 
                 <!-- Breadcrumb -->
                 <div class="p-2 lg:p-8 mx-2 mt-3">
-                    <a href="#" class="shadow-lg flex flex-col items-center bg-white border border-gray-200 rounded-lg md:flex-row md:max-w-sm ">
-                        <img class="h-32 max-w-xl w-[140px] rounded-2xl" src="img/cowok.png" alt="">
+                    <a href="#" class="overflow-hidden shadow-lg flex flex-col items-center bg-white border border-gray-200 rounded-lg md:flex-row md:max-w-sm ">
+                        <img class="h-32 max-w-xl w-[140px] rounded-2xl" src="
+                        @guest
+                            img/cowok.png
+                        @else
+                            @if(Auth::user()->jenis_kelamin == 'Perempuan')
+                            img/wanita.png
+                            @else
+                            img/cowok.png
+                            @endif
+                        @endguest" 
+                        alt="">
                         <div class="flex flex-col justify-between p-4 leading-normal">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Vicky bin djusmin</h5>
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                @guest
+                                Mahasiswa
+                            @else
+                                {{auth()->user()->nama}}
+                            @endguest
+                            </h5>
                             <hr>
-                            <p class="mb-2 font-sans text-gray-700 dark:text-gray-400">Dosen</p>
+                            <p class="mb-2 font-sans text-gray-700 dark:text-gray-400">
+                                @guest
+                                    Mahasiswa
+                                @else
+                                    {{auth()->user()->jabatan}}
+                                @endguest   
+                            </p>
                         </div>
                     </a>
                 </div>

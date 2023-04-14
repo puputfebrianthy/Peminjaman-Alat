@@ -58,21 +58,25 @@ class LoginController extends Controller
         $request->validate([
             'username' => 'required|min:3|max:20|unique:users',
             'email' => 'required|email|unique:users',
-            'password' => 'required',
-            // 'hp' => 'max:15',
-            // 'password' => 'min:5|max:30|required_with:confirm_password|same:confirm_password',
-            // 'confirm_password' => 'required'
+            'nama' => 'required',
+            'jabatan' => 'required|max:20',
+            'jeniskelamin' => 'required',
+            'password' => 'min:5|max:30|required_with:confirm_password|same:confirm_password',
+            'confirm_password' => 'required'
         ]);
 
         $validateData = [
             'username' => $request->username,
             'email' => $request->email,
             'level' => 'admin',
-            // 'usergroup' => $request->usergroup,
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'jenis_kelamin' => $request->jeniskelamin,
             'password' => $request->password,
         ];
         $validateData['password'] = bcrypt($validateData['password']);
 
+        // return dd($validateData);
         User::create($validateData);
         return back()->with('success', 'Register Successfull!');
     }

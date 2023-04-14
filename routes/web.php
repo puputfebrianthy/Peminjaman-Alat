@@ -28,6 +28,7 @@ Route::get('/ketersediaanAlat', [KetersediaanAlatController::class, 'index']);
 
 Route::get('/dashboard', [GeneralViewController::class, 'dashboard']);
 Route::get('/peminjaman', [GeneralViewController::class, 'peminjaman']);
+Route::get('/cetaksurat/{id}', [GeneralViewController::class, 'cetaksurat']);
 
 Route::get('/laporanPeminjaman', [PeminjamanAlatController::class, 'index']);
 Route::post('/createpinjam', [PeminjamanAlatController::class, 'store']);

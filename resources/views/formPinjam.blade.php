@@ -98,55 +98,55 @@
                                         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nama lengkap" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nim</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nim</label>
                                         <input type="nim" id="nim" name="nim" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
                                         focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
                                         dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nim mahasiswa" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Dosen</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Dosen</label>
                                         <input type="dosen" id="dosen" name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900
                                         text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
                                         dark:focus:border-blue-500" placeholder="nama dosen mengajar" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mata Kuliah</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mata Kuliah</label>
                                         <input type="matakuliah" id="matakuliah" name="matakuliah" class="bg-gray-50 border border-gray-300 text-gray-900
                                         text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
                                         dark:focus:border-blue-500" placeholder="mata kuliah" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ruangan</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ruangan</label>
                                         <input type="kelas" id="kelas" name="kelas" class="bg-gray-50 border border-gray-300 text-gray-900
                                         text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
                                         dark:focus:border-blue-500" placeholder="ruangan" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor Hp</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nomor Hp</label>
                                         <input type="nomor" id="nomor" name="nomor" class="bg-gray-50 border border-gray-300 text-gray-900
                                         text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
                                         dark:focus:border-blue-500" placeholder="nomor hp siswa" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alat Pinjaman</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alat Pinjaman</label>
                                         <input type="alat" id="alat" name="alat" class="bg-gray-50 border border-gray-300 text-gray-900
                                         text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
                                         dark:focus:border-blue-500" placeholder="alat yang di pinjam" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
                                         <input type="time" id="time" name="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900
                                         text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
                                         dark:focus:border-blue-500" required>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal</label>
+                                        <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal</label>
                                         <input type="date" id="date" name="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900
                                         text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
                                         dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
