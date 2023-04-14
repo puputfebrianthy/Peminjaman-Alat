@@ -56,101 +56,125 @@
                 <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer" id="btnToggle">
             </div>
         </div>
-
-        @include('components.sidebar')
-        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-            <!-- Header / Profile -->
+        <div class="flex items-center">
+            @include('components.sidebar')
+            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
+                <!-- Header / Profile -->
                 @include('components.header')
+                <!-- Breadcrumb -->
+                <div class=" lg:p-2 lg:py-4 mx-8 mt-2">
+                    <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
+                        <!-- NAVIGATOR HALAMAN HOME -->
+                        <li>
+                            <a class="text-light-green" href="#">Dashboard</a>
+                        </li>
+                        <li>
+                            <span class="text-light-green">>></span>
+                        </li>
+                        <!-- NAVIGATOR HALAMAN COURSES -->
+                        <li>
+                            <a class="text-yellow-400 font-semibold" href="#">Monitoring dosen</a>
+                        </li>
+                    </ul>
+                </div>
+                {{-- content dashboard --}}
+                <div class="px-2 mt-6 mx-10 lg:p-2 border-b-2 rounded-[10px] bg-white border-gray-300 shadow-md w-auto ">
+                    <h1 class="pl-3 text-lg text-black font-semibold">MONITORING DOSEN</h1>
+                </div>
+                <div class="container p-10 pb-8 md:px-8 lg:px-11">
+                    <div class="flex flex-col">
+                        <div class="w-full flex">
+                            <div class="lg:p-9 p-9 border-b-3 rounded-[5px] w-[720px] bg-white border-gray-300 shadow">
+                                <!-- <table> -->
+                                <form action="/createmonitoring" method="POST">
+                                    @csrf
+                                    @method('post')
+                                    
+                                    <div class="mb-4">
+                                        <label for="kuliah" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mata Kuliah</label>
+                                        <input type="" id="kuliah" name="kuliah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                        focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="hari" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
+                                        <input type="date" id="hari" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nama lengkap" required>
+                                    </div>
 
-            <!-- Breadcrumb -->
-            <div class=" lg:p-2 lg:py-4 mx-8 mt-2">
-                <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
-                    <!-- NAVIGATOR HALAMAN HOME -->
+                                    <div class="mb-4">
+                                        <label for="waktu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam</label>
+                                        <input type="time" id="waktu" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nim mahasiswa" required>
+                                    </div>
 
-                    <li>
-                        <a class="text-light-green" href="#">Dashboard</a>
-                    </li>
-
-                    <li>
-                        <span class="text-light-green">>></span>
-                    </li>
-
-                    <!-- NAVIGATOR HALAMAN COURSES -->
-
-                    <li>
-                        <a class="text-yellow-400 font-semibold" href="#">Monitoring dosen</a>
-                    </li>
-                </ul>
-            </div>
-
-            {{-- content dashboard --}}
-            <div class="px-2 mt-6 mx-10 lg:p-2 border-b-2 rounded-[10px] bg-white border-gray-300 shadow-md w-auto ">
-                <h1 class="pl-3 text-lg text-black font-semibold">MONITORING DOSEN</h1>
-            </div>
-            <div class="container p-10 pb-8 md:px-8 lg:px-11">
-                <div class="flex flex-col">
-                    <div class="w-full flex">
-                        <div class="lg:p-9 p-9 border-b-3 rounded-[5px] w-[720px] bg-white border-gray-300 shadow">
-                            <!-- <table> -->
-                            <form action="/createmonitoring" method="POST">
-                                @csrf
-                                @method('post')
-                                <div class="mb-4">
-                                    <label for="hari" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
-                                    <input type="date" id="hari" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
-                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="nama lengkap" required>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="waktu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Waktu</label>
-                                    <input type="time" id="waktu" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-                                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
-                                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="nim mahasiswa" required>
-                                </div>
-                                <div class="mb-4 font-medium text-sm text-gray-900">
-                                    <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-2">
-                                        <div class="col sm:mb-4">
-                                            <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Hadir</label>
-                                            <input type="text" id="" name="hadir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hadir" required>      
-                                        </div>
-                                        <div class="col">
-                                            <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Tiak Hadir</label>
-                                            <input type="text" id="text" name="alpa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tidak Hadir" required>
+                                    <div class="mb-4 font-medium text-sm text-gray-900">
+                                        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-2">
+                                            <div class="col sm:mb-4">
+                                                <label for="hadir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Hadir</label>
+                                                <input type="number" id="hadir" name="hadir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hadir" required>      
+                                            </div>
+                                            <div class="col">
+                                                <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Tiak Hadir</label>
+                                                <input type="number" id="" name="alpa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tidak Hadir" required>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="pembahasan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
-                                    <textarea rows="3" cols="50" id="deskripsi" name="pembahasan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                                    dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                    </textarea>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="pembelajaran" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode pembelajaran</label>
-                                    <textarea rows="3" cols="50" id="metode" name="pembelajaran" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                                    focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                                    dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                    </textarea>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen Pengajar</label>
-                                    <select name="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+
+                                    <div class="mb-4">
+                                        <label for="sks" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">SKS</label>
+                                        <input type="number" id="sks" name="sks" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="SKS" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="semester" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Semester</label>
+                                        <input type="" id="semester" name="semester" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="kelas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">kelas</label>
+                                        <input type="" id="kelas" name="kelas" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        required>
+                                    </div>
+                                
+                                    <div class="mb-4">
+                                        <label for="pembahasan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
+                                        <textarea rows="3" cols="50" id="pembahasan" name="pembahasan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                                         focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
                                         dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                        <option type=""> Vicky bin djusmin</option>
-                                        <option type=""> Vicky bin djusmin</option>
-                                        <option type=""> Vicky bin djusmin</option>
-                                    </select>
-                                </div>
-                                <div class="flex items-start mb-3">
-                                    <button type="submit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none
-                                    font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-400
-                                    dark:focus:ring-yellow-400">Submit</button>
-                                </div>
-                            </form>
+                                        </textarea>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="pembelajaran" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode pembelajaran</label>
+                                        <textarea rows="3" cols="50" id="pembelajaran" name="pembelajaran" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                        focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                        dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                        </textarea>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="dosen" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen Pengajar</label>
+                                        <select name="dosen" id="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                            dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                            <option type=""> Vicky bin djusmin</option>
+                                            <option type=""> Vicky bin djusmin</option>
+                                            <option type=""> Vicky bin djusmin</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-start mb-4">
+                                        <button type="submit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none
+                                        font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-400
+                                        dark:focus:ring-yellow-400">Submit</button>
+                                        </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

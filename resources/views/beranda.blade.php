@@ -135,7 +135,6 @@
 
                                     </h1>
                                     <p class="mt-10 rounded-md text-gray-500 text-justify ">
-
                                         Fakultas <span class="text-yellow-400">Teknik</span> Informatika
                                         <br> <span class="text-yellow-400"> Universitas Cokroaminoto </span> <span class="text-gray-500">Palopo
                                         </span>

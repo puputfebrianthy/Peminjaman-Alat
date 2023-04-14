@@ -65,17 +65,13 @@
                 <div class=" lg:p-2 lg:py-4 mx-8 mt-2">
                     <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
                         <!-- NAVIGATOR HALAMAN HOME -->
-
                         <li>
                             <a class="text-light-green" href="#">Dashboard</a>
                         </li>
-
                         <li>
                             <span class="text-light-green">>></span>
                         </li>
-
                         <!-- NAVIGATOR HALAMAN COURSES -->
-
                         <li>
                             <a class="text-yellow-400 font-semibold" href="#">Peminjaman alat</a>
                         </li>

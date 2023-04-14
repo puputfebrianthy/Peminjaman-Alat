@@ -50,121 +50,116 @@
                 <img src="img/icons/toggle_icons.svg" alt="toggle_dashboard" class="w-8 cursor-pointer" id="btnToggle">
             </div>
         </div>
+        <div class="flex items-center">
+            @include('components.sidebar')
+            <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
+                <!-- Header / Profile -->
+                @include('components.header')
 
-        @include('components.sidebar')
+                <!-- Breadcrumb -->
+                <div class=" lg:p-2 lg:py-4 mx-8 mt-2 ">
+                    <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
+                        <!-- NAVIGATOR HALAMAN HOME -->
+                        <li>
+                            <a class="text-light-green" href="#">Dashboard</a>
+                        </li>
+                        <li>
+                            <span class="text-light-green">>></span>
+                        </li>
+                        <!-- NAVIGATOR HALAMAN COURSES -->
+                        <li>
+                            <a class="text-yellow-400 font-semibold" href="#">Laporan peminjaman alat </a>
+                        </li>
+                    </ul>
+                </div>
 
-        <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
-            <!-- Header / Profile -->
-            @include('components.header')
-
-            <!-- Breadcrumb -->
-            <div class=" lg:p-2 lg:py-4 mx-8 mt-2 ">
-                <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
-                    <!-- NAVIGATOR HALAMAN HOME -->
-
-                    <li>
-                        <a class="text-light-green" href="#">Dashboard</a>
-                    </li>
-
-                    <li>
-                        <span class="text-light-green">>></span>
-                    </li>
-
-                    <!-- NAVIGATOR HALAMAN COURSES -->
-
-                    <li>
-                        <a class="text-yellow-400 font-semibold" href="#">Laporan peminjaman alat </a>
-                    </li>
-                </ul>
-            </div>
-
-            {{-- content dashboard --}}
-            <div class="px-2 mt-6 mx-10 lg:p-2 border-b-2 rounded-[10px] bg-white border-gray-300 shadow-md w-auto ">
-
-                <h1 class="pl-3 text-lg text-black font-semibold">LAPORAN PEMINJAMAN</h1>
-            </div>
-            <div class="container p-10 pb-8 md:px-8 lg:px-11">
-                <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
-                    <div class="w-full flex">
-                        <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
-                            <table class="table-fixed pt-4 divide-y divide-slate-900" id="dataTable">
-                                <thead class="bg-gray-100">
-                                    <tr>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            No
-                                        </th>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            Nama
-                                        </th>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            Nim
-                                        </th>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            Nama Dosen
-                                        </th>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            Mata kuliah
-                                        </th>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            Ruangan
-                                        </th>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            Alat Pinjaman
-                                        </th>
-                                        <th class="px-2 text-sm text-gray-500">
-                                            Waktu
-                                        </th>
-                                        <th class="p-2 text-sm text-gray-500">
-                                            Tanggal
-                                        </th>
-                                        <th class="px-2 text-sm text-gray-500">
-                                            Status
-                                        </th>
-                                    </tr>
-                                </thead>
-                                @foreach ($datas as $datas)
-                                <tbody class="bg-white">
-                                    <tr class="text-center">
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-black">
-                                            {{ $loop->iteration }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                            {{ $datas->nama }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                            {{ $datas->nim }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                        {{ $datas->dosen }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                            {{ $datas->matakuliah }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                            {{ $datas->kelas }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                            {{ $datas->alat }}
-                                        </td>
-                                        <td class="border bg- border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                        {{ $datas->waktu }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
-                                            {{ $datas->tanggal }}
-                                        </td>
-                                        <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
-                                            <button type="button" class="text-white p-[2px] @if( $datas->status == 'Diterima') bg-cyan-600 @elseif ($datas->status == "Ditolak")
-                                                bg-red-600 @elseif($datas->status == 'Dibuat') bg-lime-600 @else bg-zinc-600 @endif font-medium flex-row flex
-                                            items-center rounded-[2px] focus:outline-none mr-1 my-4">
-                                            <a href="#" class="px-1 text-sm rounded bg">
-                                                {{ $datas->status }}
-                                            </a>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                @endforeach
-                            </table>
+                {{-- content dashboard --}}
+                <div class="px-2 mt-6 mx-10 lg:p-2 border-b-2 rounded-[10px] bg-white border-gray-300 shadow-md w-auto ">
+                    <h1 class="pl-3 text-lg text-black font-semibold">LAPORAN PEMINJAMAN</h1>
+                </div>
+                <div class="container p-10 pb-8 md:px-8 lg:px-11">
+                    <div class="relative overflow-x-auto bg-white shadow-md rounded-[3px]">
+                        <div class="w-full flex">
+                            <div class="lg:p-6 p-6 border-b-3 rounded-[5px] w-full">
+                                <table class="table-fixed pt-4 divide-y divide-slate-900" id="dataTable">
+                                    <thead class="bg-gray-100">
+                                        <tr>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                No
+                                            </th>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                Nama
+                                            </th>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                Nim
+                                            </th>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                Nama Dosen
+                                            </th>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                Mata kuliah
+                                            </th>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                Ruangan
+                                            </th>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                Alat Pinjaman
+                                            </th>
+                                            <th class="px-2 text-sm text-gray-500">
+                                                Waktu
+                                            </th>
+                                            <th class="p-2 text-sm text-gray-500">
+                                                Tanggal
+                                            </th>
+                                            <th class="px-2 text-sm text-gray-500">
+                                                Status
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    @foreach ($datas as $datas)
+                                    <tbody class="bg-white">
+                                        <tr class="text-center">
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-2 py-2 text-sm text-center text-black">
+                                                {{ $loop->iteration }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                                {{ $datas->nama }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                                {{ $datas->nim }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->dosen }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                                {{ $datas->matakuliah }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                                {{ $datas->kelas }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                                {{ $datas->alat }}
+                                            </td>
+                                            <td class="border bg- border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                            {{ $datas->waktu }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 px-6 py-4 text-sm text-center text-black">
+                                                {{ $datas->tanggal }}
+                                            </td>
+                                            <td class="border border-r-0 border-l-0 border-t-0 border-slate-200 flex-row flex justify-center">
+                                                <button type="button" class="text-white p-[2px] @if( $datas->status == 'Diterima') bg-cyan-600 @elseif ($datas->status == "Ditolak")
+                                                    bg-red-600 @elseif($datas->status == 'Dibuat') bg-lime-600 @else bg-zinc-600 @endif font-medium flex-row flex
+                                                items-center rounded-[2px] focus:outline-none mr-1 my-4">
+                                                <a href="#" class="px-1 text-sm rounded bg">
+                                                    {{ $datas->status }}
+                                                </a>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    @endforeach
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -61,8 +61,8 @@
         @include('components.sidebar')
         <div class=" w-full h-screen flex-auto flex-col gap-y-4 bg-slate-100 overflow-y-scroll">
             <!-- Header / Profile -->
-
             @include('components.header')
+            
             <!-- Breadcrumb -->
             <div class="lg:p-2 lg:py-4 mx-8 mt-2">
                 <ul class="flex items-center gap-x-4 text-xs lg:text-sm">
@@ -91,7 +91,6 @@
                     </li>
                 </ul>
             </div>
-
 
             {{-- content dashboard --}}
             <div class="px-2 mt-6 mx-10 lg:p-2 border-b-2 rounded-[10px] bg-white border-gray-300 shadow-md w-auto ">

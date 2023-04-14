@@ -36,25 +36,33 @@ class monitoringController extends Controller
     public function store(Request $request, MLD $mld)
     {
         $request->validate([
+            'kuliah' => 'required',
             'hari' => 'required',
             'waktu' => 'required',
             'hadir'=>'required|numeric',
             'alpa'=>'required|numeric',
+            'sks'=>'required|numeric',
+            'semester'=>'required',
+            'kelas'=>'required',
             'pembahasan' => 'required',
             'pembelajaran' => 'required',
             'dosen' => 'required',
         ]);
         $dataCreate = [
+            'mata_kuliah' => $request->kuliah,
             'hari' => $request->hari,
             'waktu' => $request->waktu,
             'hadir'=>$request->hadir,
             'alpa'=>$request->alpa,
+            'sks'=>$request->sks,
+            'semester'=>$request->semester,
+            'kelas'=>$request->kelas,
             'pembahasan' => $request->pembahasan,
             'pembelajaran' => $request->pembelajaran,
             'dosen' => $request->dosen,
         ];
-        MLD::create($dataCreate);
         // return dd($dataCreate);
+        MLD::create($dataCreate);
         return redirect('/mld');
     }
 
