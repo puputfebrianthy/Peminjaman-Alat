@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KetersediaanAlat;
 use Illuminate\Http\Request;
+use App\Models\KetersediaanAlat;
 use Illuminate\Support\Facades\DB;
 
 class KetersediaanAlatController extends Controller
@@ -13,12 +13,24 @@ class KetersediaanAlatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $data = KetersediaanAlat::all();
-        $datas = DB::table('tb_alat')->get();
-        // return dd($data);
-        return view('ketersediaanAlat', compact('datas'));
+        $s = $request->search;
+
+        $datas = DB::table('ketersediaan_alat')
+        ->orderBy('kode_alat', 'asc');
+
+        if ($s) {
+            $datas =  $datas->where(function ($query) use ($s) {
+                $query->where('nama', 'LIKE', '%' . $s . '%')
+                    ->orWhere('kode_alat', 'LIKE', '%' . $s . '%')
+                    ->orWhere('jumlah', 'LIKE', '%' . $s . '%');
+            });
+        }
+        // dd($datas);
+        return view('ketersediaanAlat', [
+            'datas' => $datas->paginate(5)
+        ]);
     }
 
     /**

@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DataTable</title>
+        <title>Form Monitoring</title>
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -97,20 +97,22 @@
                                         dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         required>
                                     </div>
-                                    <div class="mb-4">
-                                        <label for="hari" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
-                                        <input type="date" id="hari" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
-                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nama lengkap" required>
-                                    </div>
-
-                                    <div class="mb-4">
-                                        <label for="waktu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam</label>
-                                        <input type="time" id="waktu" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
-                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nim mahasiswa" required>
+                                    <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-4 mb-4">
+                                        <div class="mb-4">
+                                            <label for="hari" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hari/Tanggal</label>
+                                            <input type="date" id="hari" name="hari" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200
+                                            dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nama lengkap" required>
+                                        </div>
+    
+                                        <div class="mb-4">
+                                            <label for="waktu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam</label>
+                                            <input type="time" id="waktu" name="waktu" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                            dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nim mahasiswa" required>
+                                        </div>
                                     </div>
 
                                     <div class="mb-4 font-medium text-sm text-gray-900">
-                                        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-2">
+                                        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-4">
                                             <div class="col sm:mb-4">
                                                 <label for="hadir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jumlah Hadir</label>
                                                 <input type="number" id="hadir" name="hadir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hadir" required>      
@@ -120,6 +122,25 @@
                                                 <input type="number" id="" name="alpa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tidak Hadir" required>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="dosen" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen Pengajar</label>
+                                        <select name="dosen" id="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                            dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                            @foreach ($dosens as $dosen)
+                                                <option type="" value="{{ $dosen->id }}" class="">{{ $dosen->nama_dosen }}</option>                                                    
+                                            @endforeach 
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="kelas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">kelas</label>
+                                        <input type="" id="kelas" name="kelas" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        required>
                                     </div>
 
                                     <div class="mb-4">
@@ -135,14 +156,7 @@
                                         focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
                                         dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         required>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="kelas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">kelas</label>
-                                        <input type="" id="kelas" name="kelas" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-                                        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
-                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        required>
-                                    </div>
+                                    </div>                                    
                                 
                                     <div class="mb-4">
                                         <label for="pembahasan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pokok pembahasan</label></label>
@@ -158,16 +172,7 @@
                                         dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                         </textarea>
                                     </div>
-                                    <div class="mb-4">
-                                        <label for="dosen" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dosen Pengajar</label>
-                                        <select name="dosen" id="dosen" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
-                                            focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-                                            dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                            <option type=""> Vicky bin djusmin</option>
-                                            <option type=""> Vicky bin djusmin</option>
-                                            <option type=""> Vicky bin djusmin</option>
-                                        </select>
-                                    </div>
+                                    
                                     <div class="flex items-start mb-4">
                                         <button type="submit" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none
                                         font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-yellow-400 dark:hover:bg-yellow-400

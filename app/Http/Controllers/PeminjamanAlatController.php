@@ -15,15 +15,44 @@ class PeminjamanAlatController extends Controller
      */
     public function index(Request $request)
     {
-        // $datas = $request->search;
-        // return dd ($datas);
-
-        $datas = DB::table('tb_peminjaman')
-        // ->where('status', 'Diterima')
-        ->orderBy('created_at', 'desc')
-        ->get();
-        // return dd ($datas);
-        return view('laporanPeminjaman', compact('datas'));
+        $s = $request->search;
+        
+        $datas = DB::table('tb_peminjaman')->leftJoin('tb_dosen', 'tb_dosen.id', '=', 'tb_peminjaman.id_dosen')
+        ->leftJoin('ketersediaan_alat', 'ketersediaan_alat.id', '=' , 'tb_peminjaman.id_alat')
+        ->select(
+            'tb_peminjaman.id',
+            'tb_peminjaman.nama',
+            'tb_peminjaman.nim',
+            'tb_peminjaman.nomor',
+            'ketersediaan_alat.nama as nama_alat',
+            'tb_peminjaman.matakuliah',
+            'tb_peminjaman.kelas',
+            'tb_peminjaman.tanggal',
+            'tb_peminjaman.waktu',
+            'tb_peminjaman.status',
+            'tb_peminjaman.created_at',
+            'tb_dosen.nama_dosen',
+        )
+        ->orderBy('tb_peminjaman.created_at', 'desc');
+        // return dd($datas);
+        
+        
+        if ($s) {
+            $datas =  $datas->where(function ($query) use ($s) {
+                $query->where('tb_peminjaman.nama', 'LIKE', '%' . $s . '%')
+                    ->orWhere('nim', 'LIKE', '%' . $s . '%')
+                    ->orWhere('nama_dosen', 'LIKE', '%' . $s . '%')
+                    ->orWhere('matakuliah', 'LIKE', '%' . $s . '%')
+                    ->orWhere('kelas', 'LIKE', '%' . $s . '%')
+                    ->orWhere('status', 'LIKE', '%' . $s . '%')
+                    ->orWhere('ketersediaan_alat.nama', 'LIKE', '%' . $s . '%');
+            });
+        }
+        
+        // return dd($datas);
+        return view('laporanPeminjaman', [
+            'datas' => $datas->paginate(10)
+        ]);
     }
 
     /**
@@ -52,9 +81,9 @@ class PeminjamanAlatController extends Controller
             'matakuliah' => $request ->matakuliah,
             'kelas' =>$request ->kelas,
             'nomor' => $request->nomor,
-            'dosen' => $request->dosen,
+            'id_dosen' => $request->dosen,
             'alat' => $request->alat,
-            'waktu' => date('H:i:s'),
+            'waktu' => $request->waktu,
             'tanggal' => $request->tanggal,
             'status' => 'Dibuat',
         ];

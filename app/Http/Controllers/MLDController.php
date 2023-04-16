@@ -12,13 +12,49 @@ class MLDController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $datas = DB::table('tb_monitoring')
-        ->orderBy('created_at', 'desc')
-        ->get();
+        $s = $request->search;
+        
+        $datas = DB::table('tb_monitoring')->leftJoin('tb_dosen', 'tb_dosen.id', '=', 'tb_monitoring.id_dosen')
+        ->select(
+            'tb_monitoring.id',
+            'tb_monitoring.tanggal',
+            'tb_monitoring.waktu',
+            'tb_monitoring.mata_kuliah',
+            'tb_monitoring.hadir',
+            'tb_monitoring.alpa',
+            'tb_monitoring.pembahasan',
+            'tb_monitoring.pembelajaran',
+            'tb_monitoring.sks',
+            'tb_monitoring.kelas',
+            'tb_monitoring.semester',
+            'tb_monitoring.created_at',
+            'tb_dosen.nama_dosen',
+        )
+        ->orderBy('created_at', 'desc');
+        
+        
+        if ($s) {
+            $datas =  $datas->where(function ($query) use ($s) {
+                $query->where('nama_dosen', 'LIKE', '%' . $s . '%')
+                    ->orWhere('mata_kuliah', 'LIKE', '%' . $s . '%')
+                    ->orWhere('pembahasan', 'LIKE', '%' . $s . '%')
+                    ->orWhere('pembelajaran', 'LIKE', '%' . $s . '%')
+                    ->orWhere('alpa', 'LIKE', '%' . $s . '%')
+                    ->orWhere('hadir', 'LIKE', '%' . $s . '%')
+                    ->orWhere('semester', 'LIKE', '%' . $s . '%')
+                    ->orWhere('waktu', 'LIKE', '%' . $s . '%')
+                    ->orWhere('tanggal', 'LIKE', '%' . $s . '%')
+                    ->orWhere('sks', 'LIKE', '%' . $s . '%')
+                    ->orWhere('kelas', 'LIKE', '%' . $s . '%');
+            });
+        }
+
         // return dd($datas);
-        return view('MLD', compact('datas') );
+        return view('MLD', [
+            'datas' => $datas->paginate(10)
+        ]);
     }
 
     /**

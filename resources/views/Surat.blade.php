@@ -114,7 +114,7 @@
                 </div>
                 <div class="w-full flex">
                     <span class="mr-3">: </span>
-                    <p>{{ $datas->waktu }}</p>
+                    <p>{{ date('H:i', strtotime($datas->waktu)) }}</p>
                 </div>
             </div>
             {{-- jumlah sks --}}
@@ -195,7 +195,7 @@
                 </div>
                 <div class="w-full flex">
                     <span class="mr-3">: </span>
-                    <p>{{ $datas->dosen }}</p>
+                    <p>{{ $datas->nama_dosen }}</p>
                 </div>
             </div>
 
@@ -209,8 +209,8 @@
                     <div>
                         <p>Menyetujui</p>
                         <p class="font-bold mb-[70px] mt-1 w-full">Dosen Pengajar</p>
-                        <P class="font-bold">{{ $datas->dosen }}</P>
-                        <p>NIP. <span>196501011992031003</span></p>
+                        <P class="font-bold">{{ $datas->nama_dosen }}</P>
+                        <p>NIP./NIDN. : <span>{{ $datas->no_induk }}</span></p>
                     </div>
                 </div>
                 <div></div>
@@ -218,8 +218,8 @@
                 <div class="text-sm text-black tracking-wide">
                     <div>
                         <p class="font-bold mb-[70px] mt-5">Ketua Tingkat</p>
-                        <P class="font-bold">Puput Febrianti</P>
-                        <p>NIDN. <span>0926018902</span></p>
+                        <P class="font-bold">..........................</P>
+                        {{-- <p>NIDN. <span>0926018902</span></p> --}}
                     </div>
                 </div>
             </div>
@@ -230,6 +230,7 @@
                         <p>Mengetahui,</p>
                         <p class="font-bold mb-[70px] mt-1 w-full">Ketua Prodi</p>
                         <P class="font-bold">Vicky bin djusmin,S.kom.,M.Kom</P>
+                        <p>NIDN. <span>0927119004</span></p>
                     </div>
                 </div>
             </div>

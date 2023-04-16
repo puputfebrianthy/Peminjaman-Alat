@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class KetersediaanAlat extends Model
 {
     use HasFactory;
-    protected $table = 'tb_alat';
+    protected $table = 'ketersediaan_alat';
+    protected $guarded = [''];
 }

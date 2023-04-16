@@ -59,7 +59,7 @@ class monitoringController extends Controller
             'kelas'=>$request->kelas,
             'pembahasan' => $request->pembahasan,
             'pembelajaran' => $request->pembelajaran,
-            'dosen' => $request->dosen,
+            'id_dosen' => $request->dosen,
         ];
         // return dd($dataCreate);
         MLD::create($dataCreate);
