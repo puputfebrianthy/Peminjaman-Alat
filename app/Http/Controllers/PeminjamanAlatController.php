@@ -82,7 +82,7 @@ class PeminjamanAlatController extends Controller
             'kelas' =>$request ->kelas,
             'nomor' => $request->nomor,
             'id_dosen' => $request->dosen,
-            'alat' => $request->alat,
+            'id_alat' => $request->alat,
             'waktu' => $request->waktu,
             'tanggal' => $request->tanggal,
             'status' => 'Dibuat',
