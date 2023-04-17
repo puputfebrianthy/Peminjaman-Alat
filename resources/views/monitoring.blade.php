@@ -205,11 +205,5 @@
                 leftNav.classList.toggle('hidden');
             }
         </script>
-
-        <script>
-            $(document).ready(function () {
-                $('#dataTable').DataTable();
-            });
-        </script>
     </body>
 </html>

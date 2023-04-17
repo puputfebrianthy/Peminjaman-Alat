@@ -194,5 +194,21 @@
                 </div>
             </div>
         </div>
+        <!--JS Sidebar-->
+        <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+        <script>
+            let btnToggle = document.getElementById('btnToggle');
+            let btnToggle2 = document.getElementById('btnToggle2');
+            let sidebar = document.querySelector('.sidebar');
+            let leftNav = document.getElementById("left-nav");
+            btnToggle.onclick = function() {
+                sidebar.classList.toggle('in-active');
+            }
+
+            btnToggle2.onclick = function() {
+                leftNav.classList.toggle('hidden');
+            }
+        </script>
     </body>
+</html>
 
